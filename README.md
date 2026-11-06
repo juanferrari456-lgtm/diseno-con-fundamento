@@ -18,7 +18,7 @@ Casi todo lo que sale mal en un proyecto de diseño sale mal antes de diseñar: 
 
 ## Cómo se conectan
 
-Cada línea es una skill que nombra a otra en sus instrucciones: le pide material, le pasa el resultado o le deriva lo que no le toca. Son 127 conexiones. La más conectada es `encuadre-del-problema`, con 22 (en azul): no es la que dibuja ni la que presenta, es la que pregunta qué problema estamos resolviendo. El conteo sale de `herramientas/contar-conexiones.py`.
+Cada línea es una skill que nombra a otra en sus instrucciones: le pide material, le pasa el resultado o le deriva lo que no le toca. Son 127 conexiones. La más conectada es `encuadre-del-problema`, con 22 (en amarillo): no es la que dibuja ni la que presenta, es la que pregunta qué problema estamos resolviendo. El conteo sale de `herramientas/contar-conexiones.py`.
 
 ![Mapa de las 20 skills y sus conexiones](docs/img/mapa-de-skills.png)
 
