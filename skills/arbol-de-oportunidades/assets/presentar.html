@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Árbol de oportunidades</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light;
+  --ink:#000000; --paper:#ffffff; --surface:#F8F7FC; --line:#E3E3E8;
+  --body:#3C3C3F; --muted:#6E6E73; --hint:#8E8E93;
+  --accent:#6C7BF2; --deep:#1E2659; --deep-ink:#E6E9FD; --mint:#E6E9FD;
+  --font: "Archivo", Arial, Helvetica, sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    color-scheme: dark;
+    --ink:#F4F4F6; --paper:#121214; --surface:#1C1C20; --line:#34343A;
+    --body:#CFCFD4; --muted:#9A9AA1; --hint:#7C7C83;
+    --accent:#8A96F5; --deep:#252E6B; --deep-ink:#E6E9FD; --mint:#20264F;
+  }
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--paper);color:var(--body);font-family:var(--font);font-size:16px;line-height:1.5}
+.wrap{max-width:1280px;margin:0 auto;padding:40px 48px 64px}
+.crumb{font-size:13px;color:var(--hint)}
+.crumb b{color:var(--ink);font-weight:500}
+h1{font-size:clamp(28px,3.4vw,44px);line-height:1.12;font-weight:800;color:var(--ink);margin:14px 0 12px;max-width:30ch;letter-spacing:-0.01em}
+.lede{max-width:68ch;color:var(--muted);margin:0 0 28px}
+.legend{display:flex;flex-wrap:wrap;gap:18px 26px;font-size:13px;color:var(--muted);padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:28px}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.sw{width:22px;height:14px;border-radius:3px;display:inline-block}
+.sw.hip{border:1.5px dashed var(--hint)}
+.sw.ind{border:1.5px solid var(--hint)}
+.sw.pat{background:var(--surface);border:1.5px solid var(--ink)}
+.sw.sol{background:var(--ink)}
+.ln{width:28px;height:0;display:inline-block;border-top:2px solid var(--ink)}
+.ln.dash{border-top:2px dashed var(--hint)}
+
+/* árbol */
+.tree{position:relative;display:grid;grid-template-columns:1fr 1.15fr 1.35fr 1.6fr;gap:0 44px;align-items:center}
+.colhead{font-size:13px;color:var(--hint);padding-bottom:10px;align-self:end}
+.col{display:flex;flex-direction:column;gap:14px;position:relative;z-index:1}
+.col.center{justify-content:center;height:100%}
+svg.links{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;overflow:visible}
+.node{border-radius:6px;padding:14px 16px;background:var(--paper);border:1.5px solid var(--line)}
+.node .k{font-size:12px;color:var(--hint);margin-bottom:4px}
+.node .t{color:var(--ink);font-weight:600;line-height:1.3}
+.node .n{font-size:13px;color:var(--muted);margin-top:6px}
+.metric{background:var(--ink);border-color:var(--ink)}
+.metric .t,.metric .big{color:var(--paper)}
+.metric .k,.metric .n{color:var(--hint)}
+.big{font-size:44px;font-weight:800;line-height:1;margin:6px 0 2px;color:var(--ink)}
+.outcome{border-color:var(--ink)}
+.gap{display:flex;align-items:baseline;gap:10px;margin-top:10px}
+.gap .web,.gap .app{font-size:26px;font-weight:800;color:var(--ink)}
+.gap .app{color:var(--ink)}
+.gap small{font-size:12px;color:var(--muted)}
+.bar{height:6px;background:var(--line);border-radius:3px;position:relative;margin-top:8px}
+.bar i{position:absolute;top:0;height:6px;border-radius:3px;background:var(--accent)}
+.alt{margin-top:12px;border:1.5px dashed var(--hint);border-radius:6px;padding:10px 12px;font-size:13px;color:var(--muted)}
+.alt b{color:var(--ink);font-weight:600}
+
+button.opp{all:unset;cursor:pointer;display:block;border-radius:6px;padding:12px 14px;border:1.5px solid var(--hint);background:var(--paper);transition:box-shadow .15s}
+button.opp:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+button.opp .t{color:var(--ink);font-weight:600;line-height:1.3}
+button.opp .m{font-size:12px;color:var(--muted);margin-top:6px;display:flex;flex-wrap:wrap;gap:4px 10px}
+button.opp.c-hip{border-style:dashed}
+button.opp.c-pat{background:var(--surface);border-color:var(--ink)}
+button.opp.sel{box-shadow:0 0 0 3px var(--accent)}
+.prio{display:inline-block;white-space:nowrap;font-size:12px;font-weight:600;color:var(--deep);background:var(--mint);border-radius:3px;padding:1px 6px}
+@media (prefers-color-scheme: dark){.prio{color:var(--deep-ink)}}
+.sol{border-radius:6px;padding:11px 14px;background:var(--ink);color:var(--paper);font-size:14px;line-height:1.35}
+.sol .k{font-size:12px;color:var(--hint);margin-bottom:3px}
+.nosol{border:1.5px dashed var(--line);border-radius:6px;padding:10px 14px;font-size:13px;color:var(--hint)}
+
+/* detalle */
+.detail{margin-top:40px;display:grid;grid-template-columns:1fr 1.25fr;gap:40px;border-top:1px solid var(--line);padding-top:28px}
+.detail h2{font-size:26px;line-height:1.2;color:var(--ink);margin:4px 0 10px;font-weight:800}
+.detail h3{font-size:15px;color:var(--ink);margin:22px 0 8px;font-weight:600}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:14px;margin:14px 0}
+.facts dt{color:var(--hint)} .facts dd{margin:0;color:var(--body)}
+.ev{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.ev li{background:var(--surface);border-radius:6px;padding:10px 12px;font-size:14px}
+.ev .src{font-size:12px;color:var(--muted);margin-top:4px}
+.tag{font-size:12px;font-weight:600;color:var(--ink);border:1px solid var(--line);border-radius:3px;padding:0 6px;margin-right:6px;background:var(--paper)}
+.link{font-size:14px;padding:10px 12px;border-left:3px solid var(--hint);background:var(--surface);border-radius:0 6px 6px 0}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th{text-align:left;font-weight:600;color:var(--ink);padding:8px 10px;border-bottom:1.5px solid var(--ink);vertical-align:bottom}
+td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+td:first-child{color:var(--ink);font-weight:500}
+.empty{color:var(--hint);font-size:14px}
+
+/* lectura */
+.reading{margin-top:44px;background:var(--deep);color:var(--deep-ink);border-radius:8px;padding:28px 32px;display:grid;grid-template-columns:1fr 1.4fr;gap:32px}
+.reading h2{color:#fff;font-size:24px;line-height:1.2;margin:0;font-weight:800}
+.reading p{margin:10px 0 0;color:var(--deep-ink)}
+.reading ol{margin:0;padding-left:20px}
+.reading li{margin-bottom:10px}
+.foot{margin-top:28px;font-size:12px;color:var(--hint);max-width:90ch}
+
+@media (max-width: 980px){
+  .wrap{padding:28px 20px 48px}
+  .tree{grid-template-columns:1fr;gap:12px}
+  .colhead{display:none}
+  svg.links{display:none}
+  .col{padding-left:0}
+  .col.c3,.col.c4{padding-left:16px;border-left:2px solid var(--line)}
+  .detail,.reading{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+
+.verdict{display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--deep);background:var(--mint);border-radius:3px;padding:2px 8px}
+.verdict.no{color:var(--body);background:var(--surface);border:1px dashed var(--hint)}
+@media (prefers-color-scheme: dark){.verdict{color:var(--deep-ink)}}
+.outcome .n{font-size:13px;line-height:1.45}
+.ask{font-size:13px;color:var(--hint);margin:0 0 2px}
+.facts dt{color:var(--hint);max-width:22ch}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="crumb" id="migas"></div>
+  <h1 id="titular"></h1>
+  <p class="lede" id="bajada"></p>
+
+  <div class="legend" aria-label="Cómo leer el árbol">
+    <span><i class="sw hip"></i>Una idea, todavía sin datos</span>
+    <span><i class="sw ind"></i>Lo muestra una fuente</span>
+    <span><i class="sw pat"></i>Lo muestran dos fuentes o más</span>
+    <span><i class="sw sol"></i>Idea para probar</span>
+    <span><i class="ln"></i>Sabemos que explica el resultado</span>
+    <span><i class="ln dash"></i>Todavía no sabemos si lo explica</span>
+  </div>
+
+  <section class="tree" id="tree" aria-label="Árbol">
+    <svg class="links" id="links" aria-hidden="true"></svg>
+    <div class="colhead">Lo que medimos</div><div class="colhead">Lo que queremos lograr</div><div class="colhead">Problemas de la gente</div><div class="colhead" id="h4">Ideas para probar</div>
+    <div class="col center c1" id="c1"></div>
+    <div class="col center c2" id="c2"></div>
+    <div class="col c3" id="c3"></div>
+    <div class="col c4" id="c4"></div>
+  </section>
+
+  <section class="detail" id="detail" aria-live="polite"></section>
+
+  <section class="reading">
+    <div><h2 id="ltit"></h2><p id="lectura"></p></div>
+    <ol id="toget"></ol>
+  </section>
+
+  <p class="foot" id="foot"></p>
+</main>
+
+<script>
+const V = __VISTA__;
+const esc = s => String(s??"").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const $ = id => document.getElementById(id);
+const CORTO = {hip:"Idea sin datos", ind:"Una fuente", pat:"Dos fuentes", sol:"Tres fuentes o más"};
+const apertura = V.modo === "apertura";
+
+$("migas").textContent = V.migas;
+$("titular").textContent = V.titular;
+$("bajada").textContent = V.bajada;
+$("ltit").textContent = V.lectura_titulo;
+$("lectura").textContent = V.lectura;
+$("foot").textContent = V.pie;
+document.title = V.titular;
+
+$("c1").innerHTML = `<div class="node metric" id="n-metric"><div class="k">Lo que medimos</div>
+  <div class="t">${esc(V.metrica.texto)}</div>${V.metrica.valor?`<div class="big">${esc(V.metrica.valor)}</div>`:""}
+  <div class="n">${esc(V.metrica.detalle)}</div></div>`;
+
+const c = V.outcome.comparacion;
+$("c2").innerHTML = `<div class="node outcome" id="n-outcome"><div class="k">Lo que queremos lograr</div>
+  <div class="t">${esc(V.outcome.texto)}</div>
+  ${c?`<div class="gap"><span class="web">${esc(c.b.valor)}</span><small>${esc(c.b.nombre)}</small><span class="app">${esc(c.a.valor)}</span><small>${esc(c.a.nombre)}</small></div>
+  <div class="verdict ${c.real?"":"no"}">${esc(c.veredicto)}: ${esc(c.diferencia)} puntos</div>
+  <div class="n">${esc(c.llano)}</div>`:""}
+  ${V.outcome.alternativa?`<div class="alt">${esc(V.outcome.alternativa)}</div>`:""}</div>`;
+
+let c3="", c4="";
+V.oportunidades.forEach(o => {
+  c3 += `<button class="opp c-${o.clase}" id="n-${o.num}" data-n="${o.num}" aria-pressed="false">
+    <div class="t">${o.num}. ${esc(o.necesidad)}</div>
+    <div class="m"><span>${CORTO[o.clase]}</span>${o.prioridad?'<span class="prio">Primero</span>':""}</div></button>`;
+  if(o.soluciones.length) o.soluciones.forEach((s,i)=>{ c4 += `<div class="sol" data-of="${o.num}"><div class="k">Idea ${i+1} para el problema ${o.num}</div>${esc(s.texto)}</div>`; });
+  else if(!apertura) c4 += `<div class="nosol" data-of="${o.num}">Problema ${o.num}: sin ideas todavía, primero hace falta más información</div>`;
+});
+$("c3").innerHTML = c3; $("c4").innerHTML = c4;
+if(apertura){ $("h4").textContent = ""; }
+
+function detalle(n){
+  const o = V.oportunidades.find(x=>x.num===n);
+  document.querySelectorAll("button.opp").forEach(b=>{const on=+b.dataset.n===n; b.classList.toggle("sel",on); b.setAttribute("aria-pressed",on);});
+  const evid = o.evidencia.length ? `<ul class="ev">${o.evidencia.map(e=>`<li>${esc(e.texto)}${e.dato?`: <b>${esc(e.dato)}</b>`:""}<div class="src">${esc(e.fuente)}, ${esc(e.periodo)}</div></li>`).join("")}</ul>`
+    : `<p class="empty">${apertura?"Es lo que vamos a salir a validar.":"Todavía no hay datos. Es una idea para salir a validar."}</p>`;
+  const sols = o.soluciones.length ? `<div class="tablewrap"><table><thead><tr><th>Idea</th><th>Qué tendría que ser cierto</th><th>Cómo lo probamos</th></tr></thead><tbody>${o.soluciones.map(s=>`<tr><td>${esc(s.texto)}</td><td>${esc(s.supuesto)}</td><td>${esc(s.prueba)}</td></tr>`).join("")}</tbody></table></div>`
+    : `<p class="empty">Sin ideas todavía: primero hace falta más información.</p>`;
+  $("detail").innerHTML = `<div>
+      <div class="crumb">Problema ${o.num} | ${esc(o.certeza)}${o.fuentes?`: ${esc(o.fuentes)}`:""}</div>
+      <h2>${esc(o.necesidad)}</h2>
+      <dl class="facts"><dt>¿A quién le pasa?</dt><dd>${esc(o.quien)}</dd><dt>¿Cuándo?</dt><dd>${esc(o.momento)}</dd>
+      <dt>¿Qué tan grave es?</dt><dd>${esc(o.gravedad)}</dd><dt>¿Quién lo puede resolver?</dt><dd>${esc(o.control)}</dd>
+      <dt>¿Por qué importa?</dt><dd>${esc(o.impacto)}</dd></dl>
+      <div class="link"><b>¿Explica el resultado que buscamos?</b> ${esc(o.explica_texto)}</div>
+      <h3>Qué lo muestra</h3>${evid}
+    </div>
+    <div>${apertura?"":`<h3 style="margin-top:4px">Ideas para probar</h3>${sols}`}</div>`;
+}
+document.querySelectorAll("button.opp").forEach(b=>b.addEventListener("click",()=>detalle(+b.dataset.n)));
+detalle(1);
+
+$("toget").innerHTML = V.a_conseguir.map(x=>`<li>${esc(x)}</li>`).join("");
+
+function rel(el, box){ const r=el.getBoundingClientRect(); return {x1:r.left-box.left, x2:r.right-box.left, y:r.top-box.top+r.height/2}; }
+function dibujar(){
+  const svg=$("links"); if(getComputedStyle(svg).display==="none"){svg.innerHTML="";return;}
+  const box=$("tree").getBoundingClientRect(); let p="";
+  const cs=getComputedStyle(document.documentElement), ink=cs.getPropertyValue("--ink").trim(), hint=cs.getPropertyValue("--hint").trim();
+  const curva=(a,b,dash)=>{const mx=(a.x2+b.x1)/2; p+=`<path d="M${a.x2},${a.y} C${mx},${a.y} ${mx},${b.y} ${b.x1},${b.y}" fill="none" stroke="${dash?hint:ink}" stroke-width="1.6" ${dash?'stroke-dasharray="5 5"':""}/>`;};
+  const m=rel($("n-metric"),box), oc=rel($("n-outcome"),box);
+  curva(m,oc,false);
+  V.oportunidades.forEach(o=>{
+    const n=rel($("n-"+o.num),box);
+    curva(oc,n,!o.explica);
+    document.querySelectorAll(`[data-of="${o.num}"]`).forEach(s=>{ if(!s.classList.contains("nosol")) curva(n,rel(s,box),false); });
+  });
+  svg.innerHTML=p;
+}
+window.addEventListener("resize", dibujar);
+if(document.fonts && document.fonts.ready) document.fonts.ready.then(dibujar);
+dibujar();
+</script>
+</body>
+</html>

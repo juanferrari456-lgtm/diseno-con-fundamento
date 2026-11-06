@@ -1,0 +1,6 @@
+.terminos-privados.txt
+node_modules/
+__pycache__/
+*.pptx
+*.pdf
+.DS_Store

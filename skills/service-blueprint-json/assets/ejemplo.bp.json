@@ -1,0 +1,596 @@
+{
+  "spec": "bp/2",
+  "meta": {
+    "titulo": "Cena en la pizzeria",
+    "variante": "Salon",
+    "subtitulo": "Una noche cualquiera, de la puerta a la vereda",
+    "estado": "as-is",
+    "version": "1.1",
+    "fuentes": "Ejemplo de demostracion"
+  },
+  "actores": [
+    {
+      "id": "cliente",
+      "label": "Cliente",
+      "color": "#B91C1C"
+    },
+    {
+      "id": "mozo",
+      "label": "Mozo",
+      "color": "#047857"
+    },
+    {
+      "id": "pizzero",
+      "label": "Pizzero",
+      "color": "#C2410C"
+    },
+    {
+      "id": "cajero",
+      "label": "Cajero",
+      "color": "#1D4ED8"
+    },
+    {
+      "id": "compras",
+      "label": "Compras",
+      "color": "#7C3AED"
+    }
+  ],
+  "canales": [
+    {
+      "id": "salon",
+      "label": "Salon",
+      "color": "#FED7AA"
+    },
+    {
+      "id": "mesa",
+      "label": "Mesa",
+      "color": "#FDE68A"
+    },
+    {
+      "id": "carta",
+      "label": "Carta",
+      "color": "#BFDBFE"
+    },
+    {
+      "id": "comanda",
+      "label": "Comanda",
+      "color": "#DDD6FE"
+    },
+    {
+      "id": "cocina",
+      "label": "Cocina",
+      "color": "#BBF7D0"
+    },
+    {
+      "id": "caja",
+      "label": "Caja",
+      "color": "#E9D5FF"
+    },
+    {
+      "id": "telefono",
+      "label": "Telefono",
+      "color": "#FECACA"
+    },
+    {
+      "id": "boca",
+      "label": "De boca en boca",
+      "color": "#E4E4E7",
+      "italica": true
+    }
+  ],
+  "fases": [
+    {
+      "id": "F1",
+      "label": "Llegada"
+    },
+    {
+      "id": "F2",
+      "label": "Pedido y espera"
+    },
+    {
+      "id": "F3",
+      "label": "Cierre"
+    }
+  ],
+  "pasos": [
+    {
+      "id": "s1",
+      "fase": "F1",
+      "label": "Eleccion",
+      "tiempo": "dias antes",
+      "carriles": {
+        "EV": [
+          {
+            "id": "ev1",
+            "texto": "Fotos del local y de las pizzas en redes, y el cartel de la vereda"
+          }
+        ],
+        "CJ": [
+          {
+            "id": "cj1",
+            "actor": "cliente",
+            "canal": "boca",
+            "texto": "Elige donde cenar esta noche"
+          }
+        ],
+        "PS": [
+          {
+            "id": "ps1",
+            "actor": "compras",
+            "canal": "telefono",
+            "texto": "Cierra el pedido de mozzarella de la semana"
+          }
+        ]
+      },
+      "hallazgos": [
+        {
+          "tipo": "dato",
+          "texto": "Seis de cada diez mesas del viernes llegan sin reserva."
+        },
+        {
+          "id": "P1",
+          "tipo": "dolor",
+          "texto": "No hay forma de saber si hay mesa antes de salir de casa",
+          "ref": "cj1"
+        },
+        {
+          "id": "O1",
+          "tipo": "oportunidad",
+          "texto": "Mostrar la espera estimada en el perfil de la red social",
+          "ref": "ev1"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "fase": "F1",
+      "label": "Llegada",
+      "tiempo": "5 min",
+      "carriles": {
+        "EV": [
+          {
+            "id": "ev2",
+            "texto": "La lista de espera en papel sobre el atril de la entrada"
+          }
+        ],
+        "CJ": [
+          {
+            "id": "cj2",
+            "actor": "cliente",
+            "canal": "salon",
+            "texto": "Pregunta si hay mesa para cuatro"
+          }
+        ],
+        "FS": [
+          {
+            "id": "fs1",
+            "actor": "mozo",
+            "canal": "salon",
+            "texto": "Anota el nombre en la lista de espera"
+          }
+        ],
+        "BS": [
+          {
+            "id": "bs1",
+            "actor": "mozo",
+            "canal": "salon",
+            "texto": "Mira que mesas estan por pedir la cuenta"
+          }
+        ]
+      },
+      "hallazgos": [
+        {
+          "id": "P2",
+          "tipo": "dolor",
+          "texto": "La espera se estima a ojo y casi siempre se queda corta",
+          "ref": "fs1"
+        },
+        {
+          "tipo": "cita",
+          "texto": "Me dijeron diez minutos y estuve media hora parado en la puerta"
+        }
+      ]
+    },
+    {
+      "id": "d1",
+      "fase": "F1",
+      "label": "Bifurcacion",
+      "tipo": "decision",
+      "pregunta": "Come en el salon o se lo lleva?",
+      "ramas": [
+        {
+          "id": "A",
+          "label": "Se queda en el salon",
+          "detalle": "7 de cada 10 grupos",
+          "sigue": "s3"
+        },
+        {
+          "id": "B",
+          "label": "Pide para llevar",
+          "detalle": "3 de cada 10 grupos"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "fase": "F2",
+      "label": "Pedido",
+      "tiempo": "10 min",
+      "carriles": {
+        "EV": [
+          {
+            "id": "ev3",
+            "texto": "La carta plastificada y la pizarra de especiales del dia"
+          }
+        ],
+        "CJ": [
+          {
+            "id": "cj3",
+            "actor": "cliente",
+            "canal": "carta",
+            "texto": "Elige la pizza en la carta"
+          }
+        ],
+        "FS": [
+          {
+            "id": "fs2",
+            "actor": "mozo",
+            "canal": "mesa",
+            "texto": "Sugiere la especial del dia"
+          },
+          {
+            "id": "fs2b",
+            "actor": "mozo",
+            "canal": "mesa",
+            "texto": "Toma el pedido de la mesa"
+          }
+        ],
+        "BS": [
+          {
+            "id": "bs2",
+            "actor": "mozo",
+            "canal": "comanda",
+            "texto": "Cuelga la comanda en la barra"
+          }
+        ],
+        "PS": [
+          {
+            "id": "ps2",
+            "actor": "pizzero",
+            "canal": "cocina",
+            "texto": "Chequea que quede masa levada suficiente"
+          }
+        ]
+      },
+      "hallazgos": [
+        {
+          "id": "P3",
+          "tipo": "dolor",
+          "texto": "La pizarra de especiales no se ve desde la mitad del salon",
+          "ref": "ev3"
+        },
+        {
+          "tipo": "nota",
+          "texto": "La especial del dia depende de lo que sobro del delivery del mediodia.",
+          "ref": "ps2"
+        },
+        {
+          "tipo": "pregunta",
+          "texto": "Cuantos clientes piden la especial sin haberla visto escrita?"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "fase": "F2",
+      "label": "Armado",
+      "tiempo": "4 min",
+      "carriles": {
+        "CJ": [
+          {
+            "id": "cj4",
+            "tipo": "espera",
+            "span": 3,
+            "texto": "Espera la pizza sin saber cuanto falta"
+          }
+        ],
+        "FS": [
+          {
+            "id": "fs3",
+            "actor": "mozo",
+            "canal": "mesa",
+            "texto": "Lleva la bebida y el pan a la mesa"
+          }
+        ],
+        "BS": [
+          {
+            "id": "bs3",
+            "actor": "pizzero",
+            "canal": "cocina",
+            "texto": "Arma la pizza con los ingredientes del pedido"
+          }
+        ]
+      },
+      "hallazgos": [
+        {
+          "id": "P4",
+          "tipo": "dolor",
+          "texto": "Nadie le dice al cliente cuanto falta, ni cuando se demora",
+          "ref": "cj4"
+        },
+        {
+          "id": "O2",
+          "tipo": "oportunidad",
+          "texto": "Avisar el tiempo estimado al tomar el pedido y avisar de nuevo si se pasa",
+          "ref": "cj4"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "fase": "F2",
+      "label": "Horno",
+      "tiempo": "8 a 18 min",
+      "carriles": {
+        "BS": [
+          {
+            "id": "bs4",
+            "actor": "pizzero",
+            "canal": "cocina",
+            "texto": "Hornea la pizza a leña"
+          }
+        ]
+      },
+      "hallazgos": [
+        {
+          "id": "P5",
+          "tipo": "dolor",
+          "texto": "Las comandas se apilan sin orden y a veces se saltea una",
+          "ref": "bs4"
+        },
+        {
+          "tipo": "dato",
+          "texto": "Un viernes a las 21 el horno tiene cola de hasta siete pizzas."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "fase": "F2",
+      "label": "Emplatado",
+      "tiempo": "1 min",
+      "carriles": {
+        "BS": [
+          {
+            "id": "bs5",
+            "actor": "pizzero",
+            "canal": "cocina",
+            "texto": "Corta la pizza y la deja en la barra"
+          }
+        ]
+      },
+      "hallazgos": [
+        {
+          "tipo": "pregunta",
+          "texto": "Cuanto tiempo queda una pizza en la barra antes de que la lleven?"
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "fase": "F2",
+      "label": "Servicio",
+      "tiempo": "2 min",
+      "carriles": {
+        "EV": [
+          {
+            "id": "ev4",
+            "texto": "La pizza en el plato de madera, cortada en ocho porciones"
+          }
+        ],
+        "CJ": [
+          {
+            "id": "cj5",
+            "actor": "cliente",
+            "canal": "mesa",
+            "texto": "Recibe la pizza en la mesa"
+          }
+        ],
+        "FS": [
+          {
+            "id": "fs4",
+            "actor": "mozo",
+            "canal": "mesa",
+            "texto": "Sirve la pizza y pregunta si falta algo"
+          }
+        ]
+      },
+      "hallazgos": [
+        {
+          "tipo": "nota",
+          "texto": "El plato de madera es lo que mas fotografian los clientes.",
+          "ref": "ev4"
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "fase": "F3",
+      "label": "Pide la cuenta",
+      "tiempo": "1 min",
+      "carriles": {
+        "CJ": [
+          {
+            "id": "cj6",
+            "actor": "cliente",
+            "canal": "mesa",
+            "texto": "Pide la cuenta al mozo que pasa cerca"
+          }
+        ],
+        "FS": [
+          {
+            "id": "fs5",
+            "actor": "mozo",
+            "canal": "mesa",
+            "texto": "Avisa a caja que la mesa pide la cuenta"
+          }
+        ]
+      },
+      "hallazgos": [
+        {
+          "tipo": "cita",
+          "texto": "Tenes que hacer semaforo con la mano hasta que alguien te ve"
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "fase": "F3",
+      "label": "Emision",
+      "tiempo": "8 min",
+      "carriles": {
+        "CJ": [
+          {
+            "id": "cj7",
+            "tipo": "espera",
+            "span": 2,
+            "unhappy": true,
+            "texto": "Espera de pie a que llegue el ticket"
+          }
+        ],
+        "EV": [
+          {
+            "id": "ev5",
+            "texto": "El ticket impreso, sin detalle de lo que se consumio"
+          }
+        ],
+        "BS": [
+          {
+            "id": "bs6",
+            "actor": "cajero",
+            "canal": "caja",
+            "texto": "Carga la comanda en el sistema"
+          }
+        ]
+      },
+      "hallazgos": [
+        {
+          "id": "P6",
+          "tipo": "dolor",
+          "texto": "El ticket no detalla los items, asi que hay que confiar en el total",
+          "ref": "ev5"
+        },
+        {
+          "id": "P7",
+          "tipo": "dolor",
+          "texto": "Pedir la cuenta es el momento mas lento de toda la noche",
+          "ref": "cj7"
+        },
+        {
+          "id": "O3",
+          "tipo": "oportunidad",
+          "texto": "Cobrar en la mesa con posnet inalambrico",
+          "ref": "bs6"
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "fase": "F3",
+      "label": "Entrega del ticket",
+      "tiempo": "2 min",
+      "carriles": {
+        "FS": [
+          {
+            "id": "fs6",
+            "actor": "mozo",
+            "canal": "mesa",
+            "texto": "Lleva el ticket a la mesa"
+          }
+        ]
+      },
+      "hallazgos": []
+    },
+    {
+      "id": "s11",
+      "fase": "F3",
+      "label": "Salida",
+      "tiempo": "2 min",
+      "carriles": {
+        "CJ": [
+          {
+            "id": "cj8",
+            "actor": "cliente",
+            "canal": "caja",
+            "texto": "Paga en la caja"
+          }
+        ],
+        "FS": [
+          {
+            "id": "fs7",
+            "actor": "cajero",
+            "canal": "caja",
+            "texto": "Cobra y saluda"
+          }
+        ],
+        "PS": [
+          {
+            "id": "ps3",
+            "actor": "mozo",
+            "canal": "salon",
+            "texto": "Limpia la mesa para el proximo grupo"
+          }
+        ]
+      },
+      "hallazgos": [
+        {
+          "tipo": "pregunta",
+          "texto": "Volveria? Nadie se lo pregunta nunca."
+        },
+        {
+          "id": "O4",
+          "tipo": "oportunidad",
+          "texto": "Un QR en el ticket para dejar una nota de la noche",
+          "ref": "cj8"
+        }
+      ]
+    }
+  ],
+  "conexiones": [
+    {
+      "de": "cj2",
+      "a": "fs1",
+      "tipo": "flecha",
+      "label": "pide mesa"
+    },
+    {
+      "de": "bs2",
+      "a": "bs3",
+      "tipo": "flecha",
+      "label": "comanda"
+    },
+    {
+      "de": "bs5",
+      "a": "fs4",
+      "tipo": "flecha",
+      "label": "pizza lista"
+    },
+    {
+      "de": "cj6",
+      "a": "fs5",
+      "tipo": "doble"
+    },
+    {
+      "de": "bs6",
+      "a": "fs6",
+      "tipo": "punteada",
+      "label": "ticket"
+    },
+    {
+      "de": "ps3",
+      "a": "fs1",
+      "tipo": "punteada",
+      "label": "mesa libre"
+    }
+  ]
+}

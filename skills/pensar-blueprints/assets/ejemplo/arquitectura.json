@@ -1,0 +1,288 @@
+{
+  "spec": "pbp/1",
+  "proyecto": "Taller mecánico de barrio",
+  "estado": "as-is",
+  "version": "v1 | 10/2026",
+  "encuadre": {
+    "pregunta": "Dónde se pierde el cliente entre que deja el auto y que lo retira",
+    "decision": "Qué tramo rediseñar primero: el presupuesto o la espera del seguro",
+    "audiencia": "Dueño del taller y jefe de recepción"
+  },
+  "fuentes": [
+    {
+      "id": "E01",
+      "label": "Entrevista a cliente particular",
+      "perspectiva": "cliente",
+      "segmento": [
+        "PART"
+      ]
+    },
+    {
+      "id": "E02",
+      "label": "Entrevista a cliente con seguro",
+      "perspectiva": "cliente",
+      "segmento": [
+        "SEG"
+      ]
+    },
+    {
+      "id": "E03",
+      "label": "Entrevista a recepcionista",
+      "perspectiva": "frontstage"
+    },
+    {
+      "id": "E04",
+      "label": "Entrevista a jefe de taller",
+      "perspectiva": "backstage"
+    },
+    {
+      "id": "OBS1",
+      "label": "Observación de un día de recepción",
+      "perspectiva": "frontstage"
+    },
+    {
+      "id": "DOC1",
+      "label": "Planilla de órdenes de trabajo del último mes",
+      "perspectiva": "negocio"
+    }
+  ],
+  "huecos": [
+    "Aseguradora: ninguna entrevista, todo lo que hace es relato del cliente y de recepción",
+    "Proveedor de repuestos: sin entrevista"
+  ],
+  "actores": [
+    {
+      "id": "cliente",
+      "label": "Cliente",
+      "tipo": "cliente"
+    },
+    {
+      "id": "recepcion",
+      "label": "Recepción",
+      "tipo": "organizacion"
+    },
+    {
+      "id": "mecanico",
+      "label": "Mecánico",
+      "tipo": "organizacion"
+    },
+    {
+      "id": "jefe",
+      "label": "Jefe de taller",
+      "tipo": "organizacion"
+    },
+    {
+      "id": "aseguradora",
+      "label": "Aseguradora",
+      "tipo": "tercero"
+    },
+    {
+      "id": "proveedor",
+      "label": "Proveedor de repuestos",
+      "tipo": "tercero"
+    }
+  ],
+  "segmentos": [
+    {
+      "id": "PART",
+      "label": "Paga de su bolsillo",
+      "criterio": "Nadie más decide sobre el presupuesto"
+    },
+    {
+      "id": "SEG",
+      "label": "Lo cubre el seguro",
+      "criterio": "La aseguradora aprueba el presupuesto antes de reparar"
+    },
+    {
+      "id": "FLOTA",
+      "label": "Empresa con flota",
+      "criterio": "Contrato anual, otra cadencia"
+    }
+  ],
+  "ciclo": [
+    {
+      "id": "C1",
+      "label": "Llegar",
+      "descripcion": "Del problema con el auto a dejarlo en el taller"
+    },
+    {
+      "id": "C2",
+      "label": "Acordar",
+      "descripcion": "Del diagnóstico al sí"
+    },
+    {
+      "id": "C3",
+      "label": "Reparar",
+      "descripcion": "Del sí al auto listo"
+    },
+    {
+      "id": "C4",
+      "label": "Retirar",
+      "descripcion": "Del aviso al auto en la calle"
+    }
+  ],
+  "blueprints": [
+    {
+      "id": "BP1",
+      "archivo": "BP1-presupuesto.json",
+      "titulo": "Presupuesto y aprobación",
+      "actor": "cliente",
+      "segmentos": [
+        "PART",
+        "SEG"
+      ],
+      "cadencia": "por reparación",
+      "ciclo": [
+        "C1",
+        "C2"
+      ],
+      "entrada": {
+        "disparador": "El auto hace un ruido o no arranca",
+        "viene_de": []
+      },
+      "salida": {
+        "resultado": "Presupuesto aprobado",
+        "recibe": "mecanico",
+        "va_a": [
+          "BP2"
+        ]
+      },
+      "intencion": "Saber cuánto le va a costar y decidir si repara",
+      "validacion": [
+        {
+          "con": "Jefe de recepción",
+          "fecha": "10/2026",
+          "que_cambio": "Se sumó la espera de la aseguradora como momento propio"
+        }
+      ]
+    },
+    {
+      "id": "BP2",
+      "archivo": "BP2-reparacion-y-retiro.json",
+      "titulo": "Reparación y retiro",
+      "actor": "cliente",
+      "segmentos": [
+        "PART",
+        "SEG"
+      ],
+      "cadencia": "por reparación",
+      "ciclo": [
+        "C3",
+        "C4"
+      ],
+      "entrada": {
+        "disparador": "Presupuesto aprobado",
+        "viene_de": [
+          "BP1"
+        ]
+      },
+      "salida": {
+        "resultado": "Auto retirado y pagado",
+        "recibe": "cliente",
+        "va_a": []
+      },
+      "intencion": "Recuperar el auto reparado"
+    },
+    {
+      "id": "BP3",
+      "archivo": "BP3-gestion-del-seguro.json",
+      "titulo": "Gestión del seguro",
+      "actor": "cliente",
+      "segmentos": [
+        "SEG"
+      ],
+      "cadencia": "por reparación",
+      "ciclo": [
+        "C2"
+      ],
+      "entrada": {
+        "disparador": "El cliente avisa que lo cubre el seguro",
+        "viene_de": []
+      },
+      "salida": {
+        "resultado": "Orden de la aseguradora",
+        "recibe": "recepcion",
+        "va_a": []
+      },
+      "intencion": "Que el seguro pague la reparación"
+    }
+  ],
+  "cortes": [
+    {
+      "decision": "Se corta en el presupuesto aprobado",
+      "por_que": "Ahí cambia el dueño del trabajo, de recepción al mecánico, y cambia lo que el cliente espera",
+      "fuente": [
+        "E03",
+        "E04"
+      ]
+    },
+    {
+      "decision": "El seguro es un blueprint aparte y no una rama",
+      "por_que": "El cliente hace trámites con otro actor mientras el taller espera, con otra intención, y eso es otro journey en paralelo",
+      "fuente": [
+        "E02",
+        "E03"
+      ],
+      "descartado": "Modelarlo como rama del presupuesto: dejaba al taller esperando sin que el blueprint lo mostrara"
+    },
+    {
+      "decision": "Particular y seguro comparten BP1 y BP2",
+      "por_que": "Cambia un solo momento, la aprobación, y eso es una decisión, no otro blueprint",
+      "fuente": [
+        "E01",
+        "E02"
+      ]
+    }
+  ],
+  "sincronizaciones": [
+    {
+      "de": "BP3.m4",
+      "a": "BP1.m6",
+      "tipo": "desbloquea",
+      "texto": "La orden de la aseguradora es lo que habilita la aprobación del cliente con seguro",
+      "fuente": [
+        "E02",
+        "E03"
+      ]
+    }
+  ],
+  "fuera_de_alcance": [
+    {
+      "segmento": "FLOTA",
+      "por_que": "Contrato anual con otra cadencia y otro decisor. Merece su propio discovery",
+      "fuentes": []
+    }
+  ],
+  "preguntas": [
+    {
+      "texto": "Cuántas reparaciones por mes pasan por seguro"
+    }
+  ],
+  "canales": [
+    {
+      "id": "telefono",
+      "label": "Teléfono"
+    },
+    {
+      "id": "mostrador",
+      "label": "Mostrador"
+    },
+    {
+      "id": "whatsapp",
+      "label": "WhatsApp"
+    },
+    {
+      "id": "web",
+      "label": "Web de la aseguradora"
+    }
+  ],
+  "secciones": {
+    "emocion": true,
+    "pensamiento": true,
+    "tiempo": true,
+    "evidencia": true,
+    "canales": true,
+    "metricas": true,
+    "regulaciones": false
+  }
+}

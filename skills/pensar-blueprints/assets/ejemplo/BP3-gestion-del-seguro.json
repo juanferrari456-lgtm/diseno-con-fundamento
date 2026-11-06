@@ -1,0 +1,153 @@
+{
+  "spec": "pbp/1",
+  "id": "BP3",
+  "subtitulo": "Cliente con seguro que hace el trámite mientras el taller espera",
+  "foco": "Entender por qué la orden de la aseguradora tarda",
+  "journey": [
+    "Denuncia el siniestro a la aseguradora",
+    "Espera que la aseguradora mande un perito",
+    "Recibe al perito",
+    "Espera la orden"
+  ],
+  "momentos": [
+    {
+      "id": "m1",
+      "label": "Denuncia",
+      "tipo": "accion",
+      "cliente": {
+        "texto": "Denuncia el siniestro en la web de la aseguradora",
+        "fuente": [
+          "E02"
+        ],
+        "canal": "web"
+      },
+      "frontstage": [
+        {
+          "actor": "aseguradora",
+          "texto": "Le da un número de siniestro",
+          "fuente": [
+            "E02"
+          ]
+        }
+      ],
+      "evidencia": [
+        {
+          "texto": "Mail con el número de siniestro",
+          "fuente": [
+            "E02"
+          ]
+        }
+      ],
+      "sigue": "m2"
+    },
+    {
+      "id": "m2",
+      "label": "Espera del perito",
+      "tipo": "espera",
+      "cliente": {
+        "texto": "Espera que lo llamen para la peritación",
+        "fuente": [
+          "E02"
+        ]
+      },
+      "sigue": "m3"
+    },
+    {
+      "id": "m3",
+      "label": "Peritación",
+      "tipo": "accion",
+      "cliente": {
+        "texto": "Lleva al perito a ver el auto al taller",
+        "fuente": [
+          "E02",
+          "E03"
+        ]
+      },
+      "frontstage": [
+        {
+          "actor": "aseguradora",
+          "texto": "El perito revisa el auto y saca fotos",
+          "fuente": [
+            "E03"
+          ]
+        }
+      ],
+      "evidencia": [
+        {
+          "texto": "Ninguna copia del informe para el cliente",
+          "fuente": [
+            "E02"
+          ]
+        }
+      ],
+      "sigue": "m4"
+    },
+    {
+      "id": "m4",
+      "label": "Orden",
+      "tipo": "espera",
+      "cliente": {
+        "texto": "Espera la orden de la aseguradora",
+        "fuente": [
+          "E02"
+        ]
+      },
+      "backstage": [
+        {
+          "actor": "aseguradora",
+          "texto": "Aprueba el monto y manda la orden al taller",
+          "inferencia": "el cliente y recepción la reciben, nadie de la aseguradora contó cómo se aprueba"
+        }
+      ],
+      "sale": true
+    }
+  ],
+  "hallazgos": [
+    {
+      "id": "P5",
+      "tipo": "dolor",
+      "momento": "m2",
+      "texto": "Nadie sabe cuánto tarda el perito y el auto ocupa lugar en el taller mientras tanto",
+      "fuente": [
+        "E02",
+        "E04"
+      ]
+    },
+    {
+      "id": "O4",
+      "tipo": "oportunidad",
+      "momento": "m2",
+      "texto": "Coordinar la peritación desde recepción el día que entra el auto",
+      "resuelve": [
+        "P5"
+      ],
+      "fuente": [
+        "E03"
+      ]
+    }
+  ],
+  "verdad": [
+    {
+      "momento": "m2",
+      "por_que": "Es donde el cliente siente que nadie se hace cargo",
+      "fuente": [
+        "E02"
+      ]
+    }
+  ],
+  "preguntas": [
+    {
+      "texto": "¿Cómo aprueba la aseguradora el monto? Falta entrevistarla"
+    }
+  ],
+  "fallas": [
+    {
+      "momento": "m2",
+      "senal": "El cliente escala al taller, que no puede hacer nada, y el auto ocupa un elevador",
+      "fuente": [
+        "E02",
+        "E04"
+      ]
+    }
+  ]
+}

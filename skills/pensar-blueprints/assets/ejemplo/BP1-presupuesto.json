@@ -1,0 +1,396 @@
+{
+  "spec": "pbp/1",
+  "id": "BP1",
+  "subtitulo": "Cliente que deja el auto y espera saber cuánto le va a costar",
+  "foco": "Encontrar por qué el presupuesto tarda y por qué se aprueba a ciegas",
+  "fases": [
+    {
+      "id": "F1",
+      "label": "Llegada"
+    },
+    {
+      "id": "F2",
+      "label": "Presupuesto"
+    }
+  ],
+  "journey": [
+    "Llama para pedir turno",
+    "Deja el auto en recepción",
+    "Espera el diagnóstico sin saber cuándo llega, mientras el taller revisa y presupuesta",
+    "Recibe el presupuesto por WhatsApp",
+    "Decide si lo aprueba, o espera a la aseguradora si tiene seguro",
+    "Aprueba el presupuesto"
+  ],
+  "momentos": [
+    {
+      "id": "m1",
+      "label": "Pedido de turno",
+      "fase": "F1",
+      "tipo": "accion",
+      "cliente": {
+        "texto": "Llama al taller para pedir turno",
+        "fuente": [
+          "E01",
+          "E02"
+        ],
+        "canal": "telefono"
+      },
+      "frontstage": [
+        {
+          "actor": "recepcion",
+          "texto": "Atiende el teléfono y anota el turno en el cuaderno",
+          "fuente": [
+            "OBS1"
+          ],
+          "canal": "telefono"
+        }
+      ],
+      "evidencia": [
+        {
+          "texto": "Ninguna confirmación escrita del turno",
+          "fuente": [
+            "E01"
+          ]
+        }
+      ],
+      "sigue": "m2"
+    },
+    {
+      "id": "m2",
+      "label": "Entrega del auto",
+      "fase": "F1",
+      "tipo": "accion",
+      "cliente": {
+        "texto": "Deja el auto y cuenta qué le pasa",
+        "fuente": [
+          "E01",
+          "E02",
+          "OBS1"
+        ],
+        "canal": "mostrador"
+      },
+      "frontstage": [
+        {
+          "actor": "recepcion",
+          "texto": "Escribe el problema en la orden de trabajo con las palabras del cliente",
+          "fuente": [
+            "OBS1"
+          ]
+        }
+      ],
+      "evidencia": [
+        {
+          "texto": "Copia de la orden de trabajo en papel",
+          "fuente": [
+            "OBS1"
+          ]
+        }
+      ],
+      "sigue": "m3"
+    },
+    {
+      "id": "m3",
+      "label": "Diagnóstico",
+      "fase": "F2",
+      "tipo": "espera",
+      "cliente": {
+        "texto": "Espera el diagnóstico sin saber cuándo llega",
+        "fuente": [
+          "E01",
+          "E02"
+        ],
+        "pensamiento": {
+          "texto": "Si no me llaman hoy, lo llevo a otro lado",
+          "fuente": [
+            "E01"
+          ]
+        },
+        "emocion": {
+          "texto": "Inquieto, sin saber a quién preguntar",
+          "fuente": [
+            "E01",
+            "E02"
+          ]
+        }
+      },
+      "tiempo": {
+        "texto": "1 a 4 días",
+        "fuente": [
+          "DOC1"
+        ]
+      },
+      "sigue": "m3a"
+    },
+    {
+      "id": "m3a",
+      "label": "Revisión en el elevador",
+      "fase": "F2",
+      "tipo": "interno",
+      "backstage": [
+        {
+          "actor": "mecanico",
+          "texto": "Revisa el auto cuando se libera un elevador",
+          "fuente": [
+            "E04"
+          ]
+        }
+      ],
+      "tiempo": {
+        "texto": "1 a 3 días hasta que se libera un elevador",
+        "fuente": [
+          "E04"
+        ]
+      },
+      "sigue": "m3b"
+    },
+    {
+      "id": "m3b",
+      "label": "Armado del presupuesto",
+      "fase": "F2",
+      "tipo": "interno",
+      "backstage": [
+        {
+          "actor": "jefe",
+          "texto": "Arma el presupuesto con precios de la lista del proveedor",
+          "fuente": [
+            "E04"
+          ]
+        }
+      ],
+      "soporte": [
+        {
+          "actor": "proveedor",
+          "texto": "Manda la lista de precios una vez por mes",
+          "inferencia": "el jefe dice que usa la lista y que los precios cambian, nadie dijo cada cuánto llega"
+        }
+      ],
+      "sigue": "m4"
+    },
+    {
+      "id": "m4",
+      "label": "Presupuesto",
+      "fase": "F2",
+      "tipo": "accion",
+      "cliente": {
+        "texto": "Recibe el presupuesto por WhatsApp",
+        "fuente": [
+          "E01",
+          "E02"
+        ],
+        "emocion": {
+          "texto": "Desconfiado del total",
+          "fuente": [
+            "E01"
+          ]
+        }
+      },
+      "frontstage": [
+        {
+          "actor": "recepcion",
+          "texto": "Manda una foto del presupuesto escrito a mano",
+          "fuente": [
+            "OBS1",
+            "E03"
+          ],
+          "canal": "whatsapp"
+        }
+      ],
+      "evidencia": [
+        {
+          "texto": "Foto del presupuesto escrito a mano",
+          "fuente": [
+            "OBS1"
+          ]
+        }
+      ],
+      "sigue": "m5"
+    },
+    {
+      "id": "m5",
+      "label": "Quién aprueba",
+      "fase": "F2",
+      "tipo": "decision",
+      "decision": {
+        "pregunta": "¿Lo paga el cliente o lo cubre el seguro?",
+        "decide": "cliente",
+        "criterio": "Si tiene póliza con cobertura para ese daño",
+        "ramas": [
+          {
+            "label": "Paga el cliente",
+            "va_a": "m6",
+            "fuente": [
+              "E01"
+            ]
+          },
+          {
+            "label": "Lo cubre el seguro",
+            "va_a": "m7",
+            "fuente": [
+              "E02"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "m7",
+      "label": "Espera de la aseguradora",
+      "fase": "F2",
+      "tipo": "espera",
+      "cliente": {
+        "texto": "Espera que la aseguradora mande la orden",
+        "fuente": [
+          "E02"
+        ]
+      },
+      "backstage": [
+        {
+          "actor": "recepcion",
+          "texto": "Manda el presupuesto a la aseguradora por mail",
+          "fuente": [
+            "E03"
+          ]
+        }
+      ],
+      "tiempo": {
+        "texto": "3 a 10 días",
+        "fuente": [
+          "E02",
+          "E03"
+        ]
+      },
+      "sigue": "m6"
+    },
+    {
+      "id": "m6",
+      "label": "Aprobación",
+      "fase": "F2",
+      "tipo": "accion",
+      "cliente": {
+        "texto": "Aprueba el presupuesto por WhatsApp",
+        "fuente": [
+          "E01",
+          "E02"
+        ]
+      },
+      "frontstage": [
+        {
+          "actor": "recepcion",
+          "texto": "Contesta con un ok y pasa la orden al taller",
+          "fuente": [
+            "OBS1"
+          ]
+        }
+      ],
+      "evidencia": [
+        {
+          "texto": "El mensaje de ok en el chat",
+          "fuente": [
+            "OBS1"
+          ]
+        }
+      ],
+      "sale": true
+    }
+  ],
+  "hallazgos": [
+    {
+      "id": "P1",
+      "tipo": "dolor",
+      "momento": "m3",
+      "texto": "El cliente no sabe cuándo va a tener el diagnóstico y llama para preguntar",
+      "fuente": [
+        "E01",
+        "E02",
+        "E03"
+      ]
+    },
+    {
+      "tipo": "cita",
+      "momento": "m3",
+      "texto": "llamé tres veces y siempre me decían que mañana",
+      "fuente": [
+        "E01"
+      ]
+    },
+    {
+      "tipo": "dato",
+      "momento": "m3",
+      "texto": "El diagnóstico tarda de 1 a 4 días según la planilla del mes",
+      "fuente": [
+        "DOC1"
+      ]
+    },
+    {
+      "id": "P2",
+      "tipo": "dolor",
+      "momento": "m4",
+      "texto": "El presupuesto no separa repuestos de mano de obra y el cliente aprueba sin entender",
+      "fuente": [
+        "E01",
+        "E02"
+      ]
+    },
+    {
+      "id": "O1",
+      "tipo": "oportunidad",
+      "momento": "m3",
+      "texto": "Dar una fecha de diagnóstico al recibir el auto",
+      "resuelve": [
+        "P1"
+      ],
+      "fuente": [
+        "E03"
+      ]
+    },
+    {
+      "id": "O2",
+      "tipo": "oportunidad",
+      "momento": "m4",
+      "texto": "Presupuesto con renglones de repuesto y mano de obra",
+      "resuelve": [
+        "P2"
+      ],
+      "inferencia": "nadie lo pidió así, sale de que dos clientes no entendieron el total"
+    },
+    {
+      "id": "P3",
+      "tipo": "dolor",
+      "momento": "m7",
+      "texto": "Con seguro, la espera se duplica y nadie le avisa al cliente en qué está",
+      "fuente": [
+        "E02"
+      ]
+    }
+  ],
+  "verdad": [
+    {
+      "momento": "m4",
+      "por_que": "Es la primera vez que el cliente ve cuánto le va a costar y decide si confía",
+      "fuente": [
+        "E01",
+        "E02"
+      ]
+    }
+  ],
+  "preguntas": [
+    {
+      "texto": "¿Cuántos clientes no aprueban y retiran el auto sin reparar?",
+      "momento": "m5"
+    },
+    {
+      "texto": "¿Cada cuánto llega la lista de precios del proveedor?",
+      "momento": "m3"
+    }
+  ],
+  "fallas": [
+    {
+      "momento": "m3",
+      "senal": "El cliente llama varias veces y algunos retiran el auto sin reparar",
+      "fuente": [
+        "E01",
+        "E03"
+      ]
+    }
+  ]
+}

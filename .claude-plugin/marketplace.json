@@ -1,0 +1,14 @@
+{
+  "name": "diseno-con-fundamento",
+  "description": "Skills en español para diseño de servicios, design thinking y mejora de procesos.",
+  "owner": {
+    "name": "Juan Ferrari"
+  },
+  "plugins": [
+    {
+      "name": "diseno-con-fundamento",
+      "source": "./",
+      "description": "20 skills en español para diseño de servicios, design thinking y mejora de procesos, conectadas entre sí."
+    }
+  ]
+}

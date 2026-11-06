@@ -1,0 +1,82 @@
+{
+  "titulo": "Lista de espera | conformidad de socios que quedan afuera",
+  "metrica": {"texto": "NPS de socios", "valor": "40", "linea_base": "40 (420 respuestas)", "periodo": "enero a septiembre", "fuente": "Encuesta trimestral de socios"},
+  "outcome": {
+    "texto": "Quien queda en lista de espera queda tan conforme como el resto de los socios",
+    "linea_base": "resto 46,7 (300 respuestas) contra lista de espera 20,0 (120 respuestas)",
+    "periodo": "enero a septiembre",
+    "fuente": "Encuesta trimestral de socios, cruzada con historial de reservas",
+    "comparacion": {
+      "a": {"nombre": "resto", "n": 300, "promotores": 180, "detractores": 40},
+      "b": {"nombre": "lista de espera", "n": 120, "promotores": 54, "detractores": 30}
+    }
+  },
+  "explicaciones_alternativas": ["Quien queda en lista de espera va en los horarios pico, que tienen salas más llenas e incómodas. Se descarta comparando el NPS de quienes van en pico con y sin lista de espera."],
+  "evidencia": [
+    {"id": "EV1", "tipo": "entrevistas", "origen": "DC3, E02-D1, E05-D2", "fuente_simple": "Entrevistas con socios", "texto": "Se enteran de que se liberó un lugar cuando ya no pueden ir", "dato": "4 de 9 entrevistas", "periodo": "octubre"},
+    {"id": "EV2", "tipo": "tickets", "origen": "Subtema Aviso tardío de lista de espera, casos 1043 y 1077", "fuente_simple": "Reclamos a atención", "texto": "Reclaman que el aviso llega minutos antes de la clase", "dato": "38 de 210 reclamos de reservas", "periodo": "julio a septiembre"},
+    {"id": "EV3", "tipo": "analytics", "origen": "Embudo de aviso de lugar liberado", "fuente_simple": "Datos de uso de la app", "texto": "La mayoría de los avisos se abre después de la hora de la clase", "dato": "61% de avisos abiertos tarde", "periodo": "julio a septiembre"},
+    {"id": "EV4", "tipo": "campo", "origen": "Observación Sede Norte 12/10", "fuente_simple": "Observación en recepción", "texto": "Recepción llama por teléfono a la lista de espera cuando alguien no llega", "dato": "3 llamadas en una clase de las 19", "periodo": "octubre"},
+    {"id": "EV5", "tipo": "entrevistas", "origen": "DC7, E03-D4", "fuente_simple": "Entrevistas con socios", "texto": "Reservan dos clases el mismo día por miedo a quedarse afuera", "dato": "3 de 9 entrevistas", "periodo": "octubre"}
+  ],
+  "oportunidades": [
+    {
+      "id": "O1",
+      "necesidad": "Quiero enterarme a tiempo de que se liberó mi lugar",
+      "actor": "socio",
+      "momento": "previa",
+      "urgencia": "media",
+      "evidencia": ["EV1", "EV2", "EV3", "EV4"],
+      "vinculo_outcome": {"estado": "hipotesis", "nota": "Lo probaría comparar el NPS de quienes recibieron el aviso a tiempo contra quienes lo recibieron tarde"},
+      "control": "alto",
+      "impacto": "Es el reclamo más frecuente de quienes quedan afuera",
+      "prioridad": true,
+      "soluciones": [
+        {"texto": "Cerrar la lista de espera una hora antes de la clase y avisar con ese margen", "supuesto": "Con una hora de margen, la mayoría puede ir", "como_testear": "Probarlo a mano en una sede durante dos semanas"},
+        {"texto": "Dejar que el socio elija hasta cuándo quiere que le avisen", "supuesto": "Cada socio sabe con cuánta anticipación puede llegar", "como_testear": "Preguntarlo en 10 entrevistas cortas en recepción"}
+      ]
+    },
+    {
+      "id": "O2",
+      "necesidad": "Quiero asegurarme un lugar sin tener que reservar de más",
+      "actor": "socio",
+      "momento": "reserva",
+      "urgencia": "media",
+      "evidencia": ["EV5"],
+      "vinculo_outcome": {"estado": "hipotesis", "nota": "Si las reservas dobles liberan menos lugares, la lista de espera crece"},
+      "control": "alto",
+      "impacto": "Las reservas dobles ocupan lugares que otro necesita",
+      "prioridad": true,
+      "soluciones": [
+        {"texto": "Mostrar cuántos lugares se suelen liberar en esa clase", "supuesto": "Saber que se liberan lugares baja el miedo a quedarse afuera", "como_testear": "Prueba con un cartel en la app en una sede"},
+        {"texto": "Permitir una sola reserva por franja horaria", "supuesto": "La mayoría de las reservas dobles son en la misma franja", "como_testear": "Contar en el historial cuántas reservas dobles caen en la misma franja"}
+      ]
+    },
+    {
+      "id": "O3",
+      "necesidad": "Quiero que me avisen sin que tengan que llamarme",
+      "actor": "recepción",
+      "momento": "durante",
+      "urgencia": "baja",
+      "evidencia": ["EV4"],
+      "vinculo_outcome": {"estado": "hipotesis", "nota": "Afecta la carga de recepción más que la conformidad del socio"},
+      "control": "alto",
+      "impacto": "Recepción compensa a mano lo que la app no resuelve",
+      "prioridad": false,
+      "soluciones": []
+    }
+  ],
+  "contradicciones": ["Los reclamos hablan de aviso tardío; dos entrevistas dicen que el aviso llega bien y que el problema es que no lo ven"],
+  "evidencia_a_conseguir": ["NPS de quienes van en horario pico con y sin lista de espera, para descartar la explicación alternativa"],
+  "presentar": {
+    "migas": "Árbol de oportunidades | Lista de espera",
+    "titular": "Quien queda en lista de espera queda bastante menos conforme, y el aviso tardío es lo que más pesa",
+    "bajada": "Juntamos entrevistas, reclamos, datos de la app y lo que vimos en recepción. Cada problema dice qué tan seguro estamos.",
+    "metrica_detalle": "La encuesta trimestral a socios, 420 respuestas entre enero y septiembre.",
+    "alternativa": "Puede que no sea la lista de espera sino el horario pico. Lo vamos a revisar antes de decidir.",
+    "lectura_titulo": "Antes de decidir qué hacer, nos falta saber esto",
+    "lectura": "Si el horario pico explica la diferencia, el foco pasa a la capacidad de las salas y no al aviso.",
+    "a_conseguir": ["La conformidad de quienes van en horario pico, con y sin lista de espera"],
+    "pie": "Caso ficticio para mostrar el formato. Datos inventados."
+  }
+}

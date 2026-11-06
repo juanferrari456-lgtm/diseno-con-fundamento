@@ -1,0 +1,596 @@
+{
+  "spec": "bp/2",
+  "meta": {
+    "titulo": "Dinner at the pizzeria",
+    "variante": "Dine in",
+    "subtitulo": "An ordinary night, from the door to the sidewalk",
+    "estado": "as-is",
+    "version": "1.1",
+    "fuentes": "Demo example"
+  },
+  "actores": [
+    {
+      "id": "guest",
+      "label": "Guest",
+      "color": "#B91C1C"
+    },
+    {
+      "id": "server",
+      "label": "Server",
+      "color": "#047857"
+    },
+    {
+      "id": "pizzaiolo",
+      "label": "Pizzaiolo",
+      "color": "#C2410C"
+    },
+    {
+      "id": "cashier",
+      "label": "Cashier",
+      "color": "#1D4ED8"
+    },
+    {
+      "id": "purchasing",
+      "label": "Purchasing",
+      "color": "#7C3AED"
+    }
+  ],
+  "canales": [
+    {
+      "id": "floor",
+      "label": "Floor",
+      "color": "#FED7AA"
+    },
+    {
+      "id": "table",
+      "label": "Table",
+      "color": "#FDE68A"
+    },
+    {
+      "id": "menu",
+      "label": "Menu",
+      "color": "#BFDBFE"
+    },
+    {
+      "id": "ticket",
+      "label": "Order slip",
+      "color": "#DDD6FE"
+    },
+    {
+      "id": "kitchen",
+      "label": "Kitchen",
+      "color": "#BBF7D0"
+    },
+    {
+      "id": "till",
+      "label": "Till",
+      "color": "#E9D5FF"
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "color": "#FECACA"
+    },
+    {
+      "id": "wom",
+      "label": "Word of mouth",
+      "color": "#E4E4E7",
+      "italica": true
+    }
+  ],
+  "fases": [
+    {
+      "id": "F1",
+      "label": "Arrival"
+    },
+    {
+      "id": "F2",
+      "label": "Order and wait"
+    },
+    {
+      "id": "F3",
+      "label": "Closing"
+    }
+  ],
+  "pasos": [
+    {
+      "id": "s1",
+      "fase": "F1",
+      "label": "Choosing",
+      "tiempo": "days before",
+      "carriles": {
+        "EV": [
+          {
+            "id": "ev1",
+            "texto": "Photos of the place and the pizzas on social, and the sign on the street"
+          }
+        ],
+        "CJ": [
+          {
+            "id": "cj1",
+            "actor": "guest",
+            "canal": "wom",
+            "texto": "Chooses where to have dinner tonight"
+          }
+        ],
+        "PS": [
+          {
+            "id": "ps1",
+            "actor": "purchasing",
+            "canal": "phone",
+            "texto": "Closes this week's mozzarella order"
+          }
+        ]
+      },
+      "hallazgos": [
+        {
+          "tipo": "dato",
+          "texto": "Six out of ten Friday tables turn up without a booking."
+        },
+        {
+          "id": "P1",
+          "tipo": "dolor",
+          "texto": "There is no way to know if there is a table before leaving home",
+          "ref": "cj1"
+        },
+        {
+          "id": "O1",
+          "tipo": "oportunidad",
+          "texto": "Show the estimated wait on the social profile",
+          "ref": "ev1"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "fase": "F1",
+      "label": "Arrival",
+      "tiempo": "5 min",
+      "carriles": {
+        "EV": [
+          {
+            "id": "ev2",
+            "texto": "The paper waiting list on the stand by the door"
+          }
+        ],
+        "CJ": [
+          {
+            "id": "cj2",
+            "actor": "guest",
+            "canal": "floor",
+            "texto": "Asks whether there is a table for four"
+          }
+        ],
+        "FS": [
+          {
+            "id": "fs1",
+            "actor": "server",
+            "canal": "floor",
+            "texto": "Writes the name on the waiting list"
+          }
+        ],
+        "BS": [
+          {
+            "id": "bs1",
+            "actor": "server",
+            "canal": "floor",
+            "texto": "Checks which tables are about to ask for the bill"
+          }
+        ]
+      },
+      "hallazgos": [
+        {
+          "id": "P2",
+          "tipo": "dolor",
+          "texto": "The wait is guessed by eye and is almost always too short",
+          "ref": "fs1"
+        },
+        {
+          "tipo": "cita",
+          "texto": "They said ten minutes and I stood by the door for half an hour"
+        }
+      ]
+    },
+    {
+      "id": "d1",
+      "fase": "F1",
+      "label": "Branch",
+      "tipo": "decision",
+      "pregunta": "Eating in or taking it away?",
+      "ramas": [
+        {
+          "id": "A",
+          "label": "Stays for dinner",
+          "detalle": "7 out of 10 parties",
+          "sigue": "s3"
+        },
+        {
+          "id": "B",
+          "label": "Orders takeaway",
+          "detalle": "3 out of 10 parties"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "fase": "F2",
+      "label": "Ordering",
+      "tiempo": "10 min",
+      "carriles": {
+        "EV": [
+          {
+            "id": "ev3",
+            "texto": "The laminated menu and the chalkboard with today's specials"
+          }
+        ],
+        "CJ": [
+          {
+            "id": "cj3",
+            "actor": "guest",
+            "canal": "menu",
+            "texto": "Picks a pizza from the menu"
+          }
+        ],
+        "FS": [
+          {
+            "id": "fs2",
+            "actor": "server",
+            "canal": "table",
+            "texto": "Suggests today's special"
+          },
+          {
+            "id": "fs2b",
+            "actor": "server",
+            "canal": "table",
+            "texto": "Takes the order at the table"
+          }
+        ],
+        "BS": [
+          {
+            "id": "bs2",
+            "actor": "server",
+            "canal": "ticket",
+            "texto": "Clips the slip to the pass"
+          }
+        ],
+        "PS": [
+          {
+            "id": "ps2",
+            "actor": "pizzaiolo",
+            "canal": "kitchen",
+            "texto": "Checks there is enough proved dough left"
+          }
+        ]
+      },
+      "hallazgos": [
+        {
+          "id": "P3",
+          "tipo": "dolor",
+          "texto": "The specials board cannot be read from the middle of the room",
+          "ref": "ev3"
+        },
+        {
+          "tipo": "nota",
+          "texto": "Today's special depends on what was left over from the lunch deliveries.",
+          "ref": "ps2"
+        },
+        {
+          "tipo": "pregunta",
+          "texto": "How many guests order the special without ever reading it?"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "fase": "F2",
+      "label": "Building",
+      "tiempo": "4 min",
+      "carriles": {
+        "CJ": [
+          {
+            "id": "cj4",
+            "tipo": "espera",
+            "span": 3,
+            "texto": "Waits for the pizza with no idea how long it takes"
+          }
+        ],
+        "FS": [
+          {
+            "id": "fs3",
+            "actor": "server",
+            "canal": "table",
+            "texto": "Brings the drinks and the bread to the table"
+          }
+        ],
+        "BS": [
+          {
+            "id": "bs3",
+            "actor": "pizzaiolo",
+            "canal": "kitchen",
+            "texto": "Builds the pizza with the ordered toppings"
+          }
+        ]
+      },
+      "hallazgos": [
+        {
+          "id": "P4",
+          "tipo": "dolor",
+          "texto": "Nobody tells the guest how long it will be, not even when it runs late",
+          "ref": "cj4"
+        },
+        {
+          "id": "O2",
+          "tipo": "oportunidad",
+          "texto": "Quote a time when taking the order, and update it if it slips",
+          "ref": "cj4"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "fase": "F2",
+      "label": "Oven",
+      "tiempo": "8 to 18 min",
+      "carriles": {
+        "BS": [
+          {
+            "id": "bs4",
+            "actor": "pizzaiolo",
+            "canal": "kitchen",
+            "texto": "Bakes the pizza in the wood oven"
+          }
+        ]
+      },
+      "hallazgos": [
+        {
+          "id": "P5",
+          "tipo": "dolor",
+          "texto": "Slips pile up with no order and one gets skipped now and then",
+          "ref": "bs4"
+        },
+        {
+          "tipo": "dato",
+          "texto": "On a Friday at 9pm the oven has a queue of up to seven pizzas."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "fase": "F2",
+      "label": "Plating",
+      "tiempo": "1 min",
+      "carriles": {
+        "BS": [
+          {
+            "id": "bs5",
+            "actor": "pizzaiolo",
+            "canal": "kitchen",
+            "texto": "Cuts the pizza and leaves it on the pass"
+          }
+        ]
+      },
+      "hallazgos": [
+        {
+          "tipo": "pregunta",
+          "texto": "How long does a pizza sit on the pass before someone takes it?"
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "fase": "F2",
+      "label": "Serving",
+      "tiempo": "2 min",
+      "carriles": {
+        "EV": [
+          {
+            "id": "ev4",
+            "texto": "The pizza on a wooden board, cut into eight slices"
+          }
+        ],
+        "CJ": [
+          {
+            "id": "cj5",
+            "actor": "guest",
+            "canal": "table",
+            "texto": "Gets the pizza at the table"
+          }
+        ],
+        "FS": [
+          {
+            "id": "fs4",
+            "actor": "server",
+            "canal": "table",
+            "texto": "Serves the pizza and asks if anything is missing"
+          }
+        ]
+      },
+      "hallazgos": [
+        {
+          "tipo": "nota",
+          "texto": "The wooden board is the most photographed thing in the room.",
+          "ref": "ev4"
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "fase": "F3",
+      "label": "Asks for the bill",
+      "tiempo": "1 min",
+      "carriles": {
+        "CJ": [
+          {
+            "id": "cj6",
+            "actor": "guest",
+            "canal": "table",
+            "texto": "Asks for the bill from a server walking past"
+          }
+        ],
+        "FS": [
+          {
+            "id": "fs5",
+            "actor": "server",
+            "canal": "table",
+            "texto": "Tells the till that table five wants the bill"
+          }
+        ]
+      },
+      "hallazgos": [
+        {
+          "tipo": "cita",
+          "texto": "You have to wave like a traffic light until somebody sees you"
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "fase": "F3",
+      "label": "Issuing",
+      "tiempo": "8 min",
+      "carriles": {
+        "CJ": [
+          {
+            "id": "cj7",
+            "tipo": "espera",
+            "span": 2,
+            "unhappy": true,
+            "texto": "Waits standing up for the bill to arrive"
+          }
+        ],
+        "EV": [
+          {
+            "id": "ev5",
+            "texto": "The printed bill, with no breakdown of what was ordered"
+          }
+        ],
+        "BS": [
+          {
+            "id": "bs6",
+            "actor": "cashier",
+            "canal": "till",
+            "texto": "Keys the slip into the system"
+          }
+        ]
+      },
+      "hallazgos": [
+        {
+          "id": "P6",
+          "tipo": "dolor",
+          "texto": "The bill has no line items, so you have to trust the total",
+          "ref": "ev5"
+        },
+        {
+          "id": "P7",
+          "tipo": "dolor",
+          "texto": "Asking for the bill is the slowest moment of the whole night",
+          "ref": "cj7"
+        },
+        {
+          "id": "O3",
+          "tipo": "oportunidad",
+          "texto": "Take payment at the table with a wireless card reader",
+          "ref": "bs6"
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "fase": "F3",
+      "label": "Bill delivered",
+      "tiempo": "2 min",
+      "carriles": {
+        "FS": [
+          {
+            "id": "fs6",
+            "actor": "server",
+            "canal": "table",
+            "texto": "Brings the bill to the table"
+          }
+        ]
+      },
+      "hallazgos": []
+    },
+    {
+      "id": "s11",
+      "fase": "F3",
+      "label": "Leaving",
+      "tiempo": "2 min",
+      "carriles": {
+        "CJ": [
+          {
+            "id": "cj8",
+            "actor": "guest",
+            "canal": "till",
+            "texto": "Pays at the till"
+          }
+        ],
+        "FS": [
+          {
+            "id": "fs7",
+            "actor": "cashier",
+            "canal": "till",
+            "texto": "Takes the payment and says goodbye"
+          }
+        ],
+        "PS": [
+          {
+            "id": "ps3",
+            "actor": "server",
+            "canal": "floor",
+            "texto": "Clears the table for the next party"
+          }
+        ]
+      },
+      "hallazgos": [
+        {
+          "tipo": "pregunta",
+          "texto": "Would they come back? Nobody ever asks."
+        },
+        {
+          "id": "O4",
+          "tipo": "oportunidad",
+          "texto": "A QR code on the bill to leave a note about the night",
+          "ref": "cj8"
+        }
+      ]
+    }
+  ],
+  "conexiones": [
+    {
+      "de": "cj2",
+      "a": "fs1",
+      "tipo": "flecha",
+      "label": "pide mesa"
+    },
+    {
+      "de": "bs2",
+      "a": "bs3",
+      "tipo": "flecha",
+      "label": "comanda"
+    },
+    {
+      "de": "bs5",
+      "a": "fs4",
+      "tipo": "flecha",
+      "label": "pizza lista"
+    },
+    {
+      "de": "cj6",
+      "a": "fs5",
+      "tipo": "doble"
+    },
+    {
+      "de": "bs6",
+      "a": "fs6",
+      "tipo": "punteada",
+      "label": "ticket"
+    },
+    {
+      "de": "ps3",
+      "a": "fs1",
+      "tipo": "punteada",
+      "label": "mesa libre"
+    }
+  ]
+}

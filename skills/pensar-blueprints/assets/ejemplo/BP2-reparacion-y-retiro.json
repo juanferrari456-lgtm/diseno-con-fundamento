@@ -1,0 +1,40 @@
+{
+  "spec": "pbp/1",
+  "id": "BP2",
+  "subtitulo": "Cliente con el presupuesto aprobado que espera su auto",
+  "foco": "Ver qué pasa cuando falta un repuesto y cómo se entera el cliente",
+  "journey": [
+    "Espera que reparen el auto",
+    "Recibe el aviso de que está listo",
+    "Paga y retira el auto"
+  ],
+  "momentos": [
+    { "id": "m1", "label": "Reparación", "tipo": "espera",
+      "cliente": { "texto": "Espera que reparen el auto", "fuente": ["E01", "E02"] },
+      "backstage": [
+        { "actor": "mecanico", "texto": "Pide el repuesto si no está en stock", "fuente": ["E04"] },
+        { "actor": "mecanico", "texto": "Repara el auto", "fuente": ["E04"] }
+      ],
+      "soporte": [ { "actor": "proveedor", "texto": "Entrega el repuesto en 1 a 5 días", "fuente": ["E04"] } ],
+      "tiempo": { "texto": "2 a 8 días", "fuente": ["DOC1"] },
+      "sigue": "m2" },
+    { "id": "m2", "label": "Aviso", "tipo": "accion",
+      "cliente": { "texto": "Recibe el aviso de que el auto está listo", "fuente": ["E01"] },
+      "frontstage": [ { "actor": "recepcion", "texto": "Llama al cliente cuando el mecánico le avisa", "fuente": ["E03"] } ],
+      "sin_evidencia": "El aviso es una llamada, no queda nada escrito [E03]",
+      "sigue": "m3" },
+    { "id": "m3", "label": "Retiro", "tipo": "accion",
+      "cliente": { "texto": "Paga y retira el auto", "fuente": ["E01", "OBS1"] },
+      "frontstage": [ { "actor": "recepcion", "texto": "Cobra y entrega la llave", "fuente": ["OBS1"] } ],
+      "evidencia": [ { "texto": "Factura y el auto", "fuente": ["OBS1"] } ],
+      "sale": true }
+  ],
+  "hallazgos": [
+    { "id": "P4", "tipo": "dolor", "momento": "m1", "texto": "Cuando falta el repuesto, el cliente se entera recién si llama", "fuente": ["E01", "E04"] },
+    { "id": "O3", "tipo": "oportunidad", "momento": "m1", "texto": "Avisar la demora del repuesto el mismo día que se pide", "resuelve": ["P4"], "fuente": ["E04"] }
+  ],
+  "verdad": [
+    { "momento": "m3", "por_que": "El cliente compara lo que pagó con lo que le dijeron y decide si vuelve", "fuente": ["E01"] }
+  ],
+  "preguntas": [ { "texto": "¿Cuántas reparaciones esperan un repuesto?", "momento": "m1" } ]
+}
