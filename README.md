@@ -14,25 +14,28 @@ Casi todo lo que sale mal en un proyecto de diseño sale mal antes de diseñar: 
 - **No simulan personas.** Ninguna skill inventa entrevistas, citas, perfiles ni reacciones. Lo que no se investigó queda como hueco con nombre.
 - **Frenan donde se decide.** Hacen solas lo mecánico y se detienen, con una propuesta concreta, donde hace falta criterio.
 - **Se adaptan a quien las usa.** Con un pedido completo, siguen sin preguntar. Con huecos, preguntan solo lo que falta. Con alguien que arranca, guían con opciones.
-- **Se llaman entre sí.** Si pedís una guía de entrevista sin problema encuadrado, la skill salta primero al encuadre. Lo llamamos la térmica.
+- **Se llaman entre sí.** Si pedís una guía de entrevista sin problema encuadrado, la skill salta primero al encuadre. Funciona como una térmica: si falta un paso anterior, corta y te lleva ahí.
 
 ## Cómo se conectan
 
-Cada línea es una skill que nombra a otra en sus instrucciones: le pide material, le pasa el resultado o le deriva lo que no le toca. Son 136 conexiones. Después de `inicio`, que presenta a las otras 19, la más conectada es `encuadre-del-problema`, con 23 (en azul).
+Cada línea es una skill que nombra a otra en sus instrucciones: le pide material, le pasa el resultado o le deriva lo que no le toca. Son 127 conexiones. La más conectada es `encuadre-del-problema`, con 22 (en azul): no es la que dibuja ni la que presenta, es la que pregunta qué problema estamos resolviendo. El conteo sale de `herramientas/contar-conexiones.py`.
 
 ![Mapa de las 20 skills y sus conexiones](docs/img/mapa-de-skills.png)
 
 ## Las skills
 
+Seis etapas y dos skills de base.
+
 | Etapa | Skill | Qué hace |
 |---|---|---|
 | Base | `inicio` | Arma el contexto de tu organización con una entrevista corta y te dice por dónde empezar |
+| Base | `markdown-converter` | PDF, Word, decks, planillas o audio a Markdown con nombre consistente |
 | Encuadrar | `encuadre-del-problema` | Pasa un pedido a problema antes de diseñar; reencuadra después de investigar |
 | Encuadrar | `mapa-de-stakeholders` | Actores, poder e interés con evidencia, tensiones y a quién hablar primero |
-| Evidencia | `evidencia` | De la pregunta a las fuentes, la consulta, el análisis y la certeza |
-| Preparar | `guia-de-entrevista` | Guía con hipótesis y criterios, y plan de campo en una página |
-| Preparar | `muestra-y-reclutamiento` | Muestra por segmento, filtro, modo guerrilla o pedido a otro equipo |
-| Preparar | `plan-de-observacion` | Qué mirar, dónde y cuándo, con hoja de registro |
+| Encuadrar | `evidencia` | De la pregunta a las fuentes, la consulta, el análisis y la certeza |
+| Preparar el campo | `guia-de-entrevista` | Guía con hipótesis y criterios, y plan de campo en una página |
+| Preparar el campo | `muestra-y-reclutamiento` | Muestra por segmento, filtro, modo guerrilla o pedido a otro equipo |
+| Preparar el campo | `plan-de-observacion` | Qué mirar, dónde y cuándo, con hoja de registro |
 | Sintetizar | `sintesis-de-entrevistas` | Ficha por entrevista y corpus que se acumula |
 | Sintetizar | `sintesis-de-campo` | Veredicto por hipótesis y tablero, con entrevistas y observación |
 | Sintetizar | `sintesis-de-reuniones` | Minuta con decisiones, acciones y temas abiertos |
@@ -40,12 +43,11 @@ Cada línea es una skill que nombra a otra en sus instrucciones: le pide materia
 | Definir | `arbol-de-oportunidades` | Métrica, resultado, oportunidades, por qués y soluciones con su supuesto |
 | Definir | `pensar-blueprints` | Cuántos blueprints, dónde se cortan y un modelo trazable |
 | Definir | `service-blueprint-json` | Un blueprint a mano para el plugin de FigJam, cuando no hay modelo |
-| Idear | `ideacion` | Cómo podríamos, expansión de ideas y fichas de concepto |
-| Idear | `priorizacion-de-conceptos` | Matriz calibrada, deseabilidad, factibilidad, viabilidad y el supuesto que mata |
-| Probar | `prueba-de-conceptos` | El prototipo más barato, el guion y la síntesis de las sesiones |
+| Idear y probar | `ideacion` | Cómo podríamos, expansión de ideas y fichas de concepto |
+| Idear y probar | `priorizacion-de-conceptos` | Matriz calibrada, deseabilidad, factibilidad, viabilidad y el supuesto que mata |
+| Idear y probar | `prueba-de-conceptos` | El prototipo más barato, el guion y la síntesis de las sesiones |
 | Comunicar | `creador-de-contenido` | Qué decir y en qué orden: resultados, recomendación, rúbrica de calidad |
 | Comunicar | `creador-de-ppt` | Decks .pptx con un sistema visual propio y 49 tipos de slide |
-| Utilitaria | `markdown-converter` | PDF, Word, decks, planillas o audio a Markdown con nombre consistente |
 
 No hace falta usarlas en orden ni instalarlas todas. Si una skill necesita algo que produce otra que no tenés, hace la versión corta de ese paso y te lo dice.
 
@@ -97,7 +99,7 @@ compartido/        principios, escala de certeza y plantilla de contexto (fuente
 skills/<skill>/    SKILL.md, references/, scripts/, assets/
 instalar/          un .zip por skill
 docs/img/          imágenes del README
-herramientas/      armar-zips.py y barrer-datos.py
+herramientas/      armar-zips.py, barrer-datos.py y contar-conexiones.py
 .claude-plugin/    plugin.json y marketplace.json
 ```
 

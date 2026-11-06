@@ -4,7 +4,7 @@
 
 **Design Thinking Pack, de Polar Bear.**
 
-Un paquete de 33 skills en inglés que recorre el design thinking de punta a punta. De ahí tomamos ideas de método:
+Un paquete de 33 skills en inglés que recorre el design thinking de punta a punta, compartido por Polar Bear en LinkedIn. De ahí tomamos ideas de método:
 
 - Cerrar cada skill con una regla que no se negocia.
 - Encadenar las skills por lo que produce una y necesita la otra.
@@ -15,7 +15,7 @@ Un paquete de 33 skills en inglés que recorre el design thinking de punta a pun
 - Cerrar con una recomendación en una página, incluida la condición para frenar.
 - Sumar etapas que el paquete original cubre y el nuestro no tenía: ideación, priorización de conceptos y prueba.
 
-No copiamos su texto. Cada skill de este paquete se escribió de nuevo, en español, a partir de práctica propia en diseño de servicios. El pack original se distribuye para uso dentro de una empresa y no para reventa, así que este repositorio no lo incluye ni lo redistribuye.
+No copiamos su texto. Cada skill de este paquete se escribió de nuevo, en español, a partir de práctica propia en diseño de servicios. El pack original es de Polar Bear: este repositorio no lo incluye ni lo redistribuye.
 
 ## Herramientas que usan los scripts
 
