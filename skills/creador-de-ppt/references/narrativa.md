@@ -1,5 +1,14 @@
 # Narrativa y copy
 
+## Contenido
+
+- Arco del deck
+- Variante: relevamiento y propuesta
+- Variante: síntesis de un discovery
+- Convenciones de escritura
+- Idioma y tono
+- Autoría y datos del proyecto
+
 El sistema visual no salva un deck mal contado. Esta es la estructura que el formato
 espera y las convenciones de escritura que lo sostienen.
 

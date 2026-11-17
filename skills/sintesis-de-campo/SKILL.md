@@ -58,7 +58,7 @@ Según cómo llega el pedido (principio P1):
 
 ### 1 | Preparar
 
-Leer `$B/SKILL.md` y `$B/references/ficha.md` (reglas de la base) y `references/campo.md` (esta skill). Después:
+Leer `$B/references/ficha.md` (plantilla y reglas de la ficha base) y `references/campo.md` (esta skill). No hace falta abrir el `SKILL.md` de la base: los comandos que usa esta skill están acá. Después:
 
 ```bash
 node $C init <origen> --dir $W

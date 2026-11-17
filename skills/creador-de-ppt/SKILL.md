@@ -114,13 +114,13 @@ confiable: dejar ~10% de aire extra en los contenedores.
 
 ## QA
 
-El QA es lo que separa un deck del sistema de uno que se parece: los desbordes de texto solo se ven renderizados. Los scripts de abajo vienen de la skill `pptx`; si en este entorno están en otra ruta, buscarlos ahí (o usar `soffice` directo para el PDF).
+El QA es lo que separa un deck del sistema de uno que se parece: los desbordes de texto solo se ven renderizados. Correr siempre este comando, sin cambiarlo:
 
 ```bash
-python /mnt/skills/public/pptx/scripts/office/validate.py salida.pptx
-python /mnt/skills/public/pptx/scripts/office/soffice.py --headless --convert-to pdf salida.pptx
-rm -f slide-*.jpg && pdftoppm -jpeg -r 150 salida.pdf slide && ls -1 "$PWD"/slide-*.jpg
+bash <ruta-de-esta-skill>/scripts/qa.sh salida.pptx qa
 ```
+
+Valida el archivo si encuentra la skill `pptx`, lo pasa a PDF y deja un JPG por slide en `qa/`. Si falla, dice qué falta (LibreOffice o poppler): instalarlo y volver a correrlo.
 
 Mirar **todos** los slides renderizados y revisar, en este orden:
 
@@ -141,6 +141,8 @@ Corregir en el script de build y volver a renderizar, nunca editando el XML a ma
 - `references/plantillas-slides.md`: los arquetipos, su API y cuándo usar cada uno, incluidos los de relato (`voice`, `annotatedScreen`, `tree`, `sources`) y los de relevamiento y propuesta (`scopeGrid`, `scenarios`, `scenario`, `waves`, `breakdown`, `scale`, `profiles`, `conclusions`), los de síntesis (`rainbow`, `emotionCurve`, `hypothesisBoard`, `ecosystem`, `archetypes`, `perSegment`, `insight`, `causalChain`, `unknowns`) y los de recomendación y anexo (`triangulation`, `comparisonStat`, `ownerCheck`, `ownershipMatrix`, `keyResults`, `decisionAsk`, `sampleTable`, `verbatimGrid`).
 - `references/narrativa.md`: arco del deck (y su variante de relevamiento y propuesta), convenciones de copy y de idioma.
 - `scripts/deck-kit.js`: la librería.
+- `scripts/qa.sh`: validación y render para el QA.
 - `scripts/ejemplo-uso.js`: deck mínimo de ejemplo con contenido genérico.
 - `scripts/ejemplo-sintesis.js`: deck de síntesis y recomendación de un discovery (arcoíris, curva emocional, hipótesis, ecosistema, elenco, segmentos, insight, cadena causal, vacíos, triangulación, cifra contra cifra, dueños, responsabilidades, resultados clave, decisiones, muestra y verbatims) con contenido ficticio.
+- `references/principios.md` y `references/certeza-y-muestras.md`: principios y escala de certeza del paquete, para el contenido que entra al deck.
 - `scripts/ejemplo-relevamiento.js`: deck de relevamiento y propuesta (alcance, escenarios, olas, gobernanza y conclusiones) con contenido genérico.

@@ -28,8 +28,6 @@ uvx markitdown entrada.docx -o salida.md
 uvx --from "markitdown[pdf]" markitdown entrada.pdf -o salida.md   # PDF necesita el extra
 ```
 
-Otras opciones útiles: `-x` para indicar la extensión cuando se lee de stdin, `-d` con `-e <endpoint>` para usar Azure Document Intelligence en PDFs complejos.
-
 Después de convertir, revisar la extracción. Los decks con layout multicolumna salen con las columnas entrelazadas: reconstruir el orden de lectura real antes de entregar.
 
 Si el archivo ya viene en Markdown (por ejemplo, exportado de un editor de documentos), no hace falta markitdown: limpiar los escapes del exportador y rearmar la estructura aplanada, sin tocar el texto.

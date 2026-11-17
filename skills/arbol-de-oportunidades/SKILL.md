@@ -93,7 +93,7 @@ Por escrito, para cada oportunidad:
 3. Si la resolvemos, ¿cuánto nos acerca a la métrica?
 4. ¿Cuánto control tenemos? ¿La resuelve el servicio propio o depende de terceros?
 
-Un puntaje numérico solo si hay métricas de salud reales detrás, con su intervalo calculado (`scripts/intervalo.py` de `evidencia`). Nunca importancia ni satisfacción estimadas por la IA.
+Un puntaje numérico solo si hay métricas de salud reales detrás, con su intervalo calculado (`<carpeta de la skill evidencia>/scripts/intervalo.py`; si esa skill no está, sin puntaje). Nunca importancia ni satisfacción estimadas por la IA.
 
 ### 6. Escalera de por qués
 
@@ -109,7 +109,7 @@ Para cada oportunidad prioritaria, antes de proponer soluciones, bajar hacia la 
 
 Al menos dos por oportunidad prioritaria, distintas entre sí. Cada una con su supuesto y cómo se prueba, barato y antes de construir. Una prueba que solo puede salir bien no es una prueba. Todas las soluciones son hipótesis: el árbol no las valida.
 
-Antes de proponerlas, verificar con el dueño del sistema qué existe para esa oportunidad y clasificar: no existe, existe y no lo saben, existe y no les sirve, o no es de este sistema. Si existe, al menos una solución es de adopción y su supuesto es por qué no llegaba. Detalle en `creador-de-contenido`, "La repregunta del dueño".
+Antes de proponerlas, verificar con el dueño del sistema qué existe para esa oportunidad y clasificar: no existe, existe y no lo saben, existe y no les sirve, o no es de este sistema. Si existe, al menos una solución es de adopción y su supuesto es por qué no llegaba.
 
 Para ampliar las soluciones más allá de las obvias, `ideacion`.
 

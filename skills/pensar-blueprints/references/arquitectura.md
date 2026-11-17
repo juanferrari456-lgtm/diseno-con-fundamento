@@ -1,5 +1,15 @@
 # Arquitectura: cuántos blueprints y dónde se corta cada uno
 
+## Contenido
+
+- 1. El ciclo de la relación
+- 2. Segmentos
+- 3. Los tests de corte
+- 4. Traspasos
+- 5. Paralelos
+- 6. Antipatrones
+- 7. Cuántos blueprints
+
 La arquitectura es la decisión más cara del trabajo y la que menos se discute.
 Si está mal, cada blueprint puede estar bien escrito y el conjunto igual no
 sirve: dos cuentan lo mismo, un tramo no lo cuenta nadie, y un mismo dolor

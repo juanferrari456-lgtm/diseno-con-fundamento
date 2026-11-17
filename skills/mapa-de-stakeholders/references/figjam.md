@@ -1,5 +1,13 @@
 # Entrega en FigJam (vía Figma MCP)
 
+## Contenido
+
+- Antes de tocar nada
+- Composición del board
+- Código de color
+- Conectores
+- Al terminar
+
 ## Antes de tocar nada
 
 Cargar las skills `figma:figma-use` y `figma:figma-use-figjam` antes de cualquier

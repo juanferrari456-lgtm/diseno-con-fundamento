@@ -5,9 +5,7 @@ description: "Diseña y lee la prueba más barata que responde la pregunta sobre
 
 # Prueba de conceptos
 
-Un prototipo es una pregunta disfrazada, no un producto chico. Tiene un olor cuando falla: tres semanas adentro del "prototipo", alguien discute la pantalla de configuración. Si el prototipo tarda más que la prueba, es un producto.
-
-Esta skill cubre las tres partes de probar: el plan, el guion y la lectura de lo que pasó.
+Un prototipo es una pregunta, no un producto chico: si tarda más que la prueba, es un producto. Esta skill cubre las tres partes de probar: el plan, el guion y la lectura de lo que pasó.
 
 Principios del paquete en `references/principios.md`.
 

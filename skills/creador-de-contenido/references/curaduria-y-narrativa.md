@@ -1,5 +1,18 @@
 # Corte 9 | Del volcado a la curaduría
 
+## Contenido
+
+- Las tres preguntas antes de cerrar
+- Abrir con lo que mueve la aguja
+- Jerarquía narrativa dentro del slide
+- Peso relativo entre bloques
+- Clusters e insights: si conviven, se distinguen
+- Los How Might We cuelgan de algo
+- Lenguaje
+- Alcance explícito
+- Recursos de relato
+- El cierre
+
 El entregable no compite contra el tiempo de reunión, compite contra la atención
 disponible. Una presentación con mucha data rica y sin jerarquía abruma, y lo que abruma
 se lee como material ajeno: el stakeholder no se apropia de nada.

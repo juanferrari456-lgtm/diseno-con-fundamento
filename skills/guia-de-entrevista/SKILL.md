@@ -5,9 +5,7 @@ description: "Arma la guía de entrevista de un discovery o una investigación d
 
 # Guía de entrevista
 
-Una buena guía no es un cuestionario leído en voz alta. Es un mapa de temas a visitar, con preguntas que llevan a la persona a contar lo que pasó y no lo que suena razonable. "Contame la última vez que reservaste una clase" trae una historia. "¿Usarías una app más rápida?" trae cortesía.
-
-Esta guía además sirve para decidir: cada hipótesis tiene su criterio para confirmarla o refutarla, y así la síntesis puede dar un veredicto en lugar de una impresión.
+Arma una guía de temas con preguntas que piden historias, no opiniones. Cada hipótesis lleva su criterio para confirmarla o refutarla, así la síntesis da un veredicto y no una impresión.
 
 Principios del paquete en `references/principios.md`.
 

@@ -1,5 +1,14 @@
 # Leer lo que vuelve
 
+## Contenido
+
+- 1. Reclamos y casos de atención
+- 2. Encuestas
+- 3. Tasas por volumen
+- 4. ¿La diferencia es real?
+- 5. Nivel de certeza
+- 6. Cuidados generales
+
 ## 1. Reclamos y casos de atención
 
 El objetivo es pasar de "hay 300 reclamos de reembolso" a "de 300 reclamos de reembolso, 120 (40%) son por cambio de fecha y 45 (15%) por una política mal informada, con estos casos como evidencia". Lo que vale es el subtema cuantificado y trazable, no el resumen general.

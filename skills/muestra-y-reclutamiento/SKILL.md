@@ -5,7 +5,7 @@ description: "Arma la muestra de una investigación de servicio y cómo consegui
 
 # Muestra y reclutamiento
 
-La calidad del reclutamiento pone techo a la investigación: entrevistas brillantes con las personas equivocadas dan hallazgos seguros sobre nadie. Esta skill define a quién escuchar, cuántos y cómo llegar a ellos, sin que la muestra se arme con los más fáciles de conseguir.
+Esta skill define a quién escuchar, cuántos y cómo llegar a ellos, sin que la muestra se arme con los más fáciles de conseguir.
 
 Principios del paquete en `references/principios.md`.
 

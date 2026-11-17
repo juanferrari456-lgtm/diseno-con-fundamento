@@ -1,5 +1,16 @@
 # Rúbrica de auditoría
 
+## Contenido
+
+- Objetivo y método
+- Hallazgos
+- Evidencia
+- Oportunidades y cierre
+- Mejoras: la repregunta del dueño
+- Recomendación, alcance y rol
+- Curaduría
+- Test final
+
 Pasar antes de dar por cerrado cualquier entregable. Cada ítem se responde con la
 evidencia en la pieza, no con "sí, eso lo tenemos".
 

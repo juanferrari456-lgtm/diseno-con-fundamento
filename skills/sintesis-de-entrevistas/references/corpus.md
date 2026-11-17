@@ -1,5 +1,17 @@
 # El corpus y su motor
 
+## Contenido
+
+- Archivos del proyecto
+- Comandos
+- Persistencia
+- Contradicciones
+- add es idempotente
+- El mapeo de dolores
+- Migrar un acumulado que ya existe
+- Cuando algo no parsea
+- Qué cuesta cada cosa
+
 Todo el ahorro de esta skill está en una decisión: **la ficha es la fuente y el
 resto se deriva**. El acumulado no se escribe, se genera. Por eso nunca hace
 falta leerlo ni reescribirlo para agregar una entrevista.

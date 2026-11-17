@@ -60,7 +60,7 @@ Este trabajo se hace sobre material desprolijo, donde es fácil inventar un apel
 
 - Nunca completar apellidos, cargos, áreas ni jerarquías que no estén en el material. Si falta, queda vacío con `[VERIFICAR]`.
 - Marcar `[VERIFICAR]` en toda calificación inferida del tono de una conversación en vez de un hecho.
-- Marcar `[VERIFICAR]` lo que venga de documentos más viejos que `UMBRAL_VIGENCIA`.
+- Marcar `[VERIFICAR]` lo que venga de documentos más viejos que `UMBRAL_VIGENCIA`. Si `contexto.md` no lo define, anotar la fecha del documento al lado del dato y no marcar por antigüedad.
 
 ## Campos mínimos de cada actor
 

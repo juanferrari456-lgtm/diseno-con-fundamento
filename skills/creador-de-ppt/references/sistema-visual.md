@@ -1,5 +1,16 @@
 # Sistema visual
 
+## Contenido
+
+- Color
+- Grilla (13.333" × 7.5", LAYOUT_WIDE)
+- Tipografía
+- Motivos que se repiten
+- Muchas categorías con un solo acento
+- Construcción progresiva
+- Ilustraciones
+- Lo que rompe el sistema
+
 Todos los valores viven en `TOKENS` dentro de `deck-kit.js`. Este documento explica
 para qué sirve cada uno, que es lo que evita usarlos mal.
 

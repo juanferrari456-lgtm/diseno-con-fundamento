@@ -5,8 +5,6 @@ description: "Prioriza conceptos con criterio a la vista: matriz 2x2 con ejes de
 
 # Priorización de conceptos
 
-La matriz 2x2 es simple; la disciplina no. Con ejes sin calibrar, todo cae arriba a la izquierda, que es la forma educada de decir que el equipo puntuó su propio optimismo. Ubicar sin razonamiento escrito es votar; ubicar con razonamiento es una decisión que se puede defender en seis meses.
-
 Esta skill hace tres cosas sobre el mismo conjunto de conceptos: los ubica en la matriz, les toma las tres preguntas que deciden su vida (¿la gente lo quiere?, ¿lo podemos hacer?, ¿se sostiene?) y nombra la apuesta que los mata.
 
 Principios del paquete en `references/principios.md`. Escala de certeza en `references/certeza-y-muestras.md`.

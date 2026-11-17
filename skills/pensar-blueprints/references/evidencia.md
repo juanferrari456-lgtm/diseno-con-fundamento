@@ -1,5 +1,14 @@
 # Evidencia: qué hay en la carpeta y cuánto se puede afirmar
 
+## Contenido
+
+- 1. Inventario
+- 2. Leer sin cargar todo
+- 3. Cobertura y huecos
+- 4. Certeza
+- 5. Contradicciones
+- 6. Lo que nunca se hace
+
 El modelo vale lo que valen sus fuentes. Este paso no se saltea aunque el pedido
 sea "armame el blueprint de esto" con un solo archivo adjunto: la carpeta del
 proyecto casi siempre tiene más.

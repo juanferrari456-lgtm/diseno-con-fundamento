@@ -5,13 +5,9 @@ description: "Piensa los service blueprints sin ningún formato de destino: lee 
 
 # Pensar los blueprints
 
-Un blueprint de valor se decide en el pensamiento, no en el dibujo. Cuántos
-recorridos hay, dónde empieza y termina cada uno, quién es el cliente de cada
-uno, qué cambia según el segmento, qué pasa en paralelo, qué siente y piensa el
-cliente, y de qué fuente sale cada cosa. Si eso se piensa adentro de un formato,
-el formato decide por vos: se corta un blueprint porque no entra, se pega otro
-porque quedaba corto, una decisión se dibuja aunque todas sus ramas vayan al
-mismo lugar, y la fuente queda afuera del archivo.
+Un blueprint de valor se decide en el pensamiento, no en el dibujo: si se
+piensa adentro de un formato, el formato decide los cortes y la fuente queda
+afuera del archivo.
 
 Esta skill hace el pensamiento y deja un **modelo**: una carpeta con
 `arquitectura.json`, un archivo por blueprint y un `.md` legible de cada uno.
@@ -279,12 +275,10 @@ El modelo no se acomoda al formato de dibujo. Un blueprint no se corta por largo
 
 ## Errores que existe para evitar
 
-- Cortar un blueprint porque no entra en el formato.
-- Una decisión con ramas que llegan todas al mismo lugar.
-- El mismo tramo contado en tres blueprints.
+Además de romper las cinco condiciones:
+
 - Un carril del cliente escrito desde entrevistas internas y presentado como si viniera del cliente.
 - Oportunidades escritas como soluciones: van como oportunidad del dolor que resuelven.
-- Presentar como final un blueprint que nadie que opera el servicio validó.
 
 ## Referencias
 
@@ -297,6 +291,8 @@ El modelo no se acomoda al formato de dibujo. Un blueprint no se corta por largo
 - `references/modelo.md`: el formato de los archivos, campo por campo, y lo que
   revisa cada regla del `check`.
 - `references/conexiones.md`: las otras skills y quién numera qué.
+- `references/principios.md` y `references/certeza-y-muestras.md`: principios
+  y escala de certeza del paquete.
 - `assets/ejemplo/`: un modelo completo de un taller mecánico con tres
   blueprints, una decisión que reconverge, un journey paralelo sincronizado,
   puntos de falla y una validación registrada.
