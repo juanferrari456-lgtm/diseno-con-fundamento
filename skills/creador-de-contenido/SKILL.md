@@ -19,6 +19,7 @@ Principios del paquete en `references/principios.md`.
 | Un número no tiene período, fuente o intervalo | `evidencia` |
 | Las oportunidades no cuelgan de un dolor | `arbol-de-oportunidades` |
 | El contenido está y falta el armado visual | `creador-de-ppt` |
+| El pedido llegó chato o genérico y conviene llevarlo a nivel profesional | Ofrecer `mejor` en una línea; corre solo si la persona escribe /mejor |
 
 Según cómo llega el pedido (principio P1): con material completo, proponer los mensajes y esperar el ok; con huecos, preguntar primero quién decide y qué tiene que decidir; para alguien que arranca, explicar en una línea la regla que ordena todo y trabajar los mensajes juntos.
 

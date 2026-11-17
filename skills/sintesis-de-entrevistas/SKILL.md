@@ -42,6 +42,7 @@ Según cómo llega el pedido (principio P1):
 | Es una reunión interna | `sintesis-de-reuniones` |
 | El entrevistado ofreció un contacto | Sumarlo a `mapa-de-stakeholders` con la entrevista como fuente |
 | Cerró el lote y se pide qué hacer con todo esto | `arbol-de-oportunidades` o `arquetipos` |
+| El pedido llegó chato o genérico y conviene llevarlo a nivel profesional | Ofrecer `mejor` en una línea; corre solo si la persona escribe /mejor |
 
 ## Arquitectura
 

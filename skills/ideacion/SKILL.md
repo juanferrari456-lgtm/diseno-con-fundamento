@@ -31,6 +31,7 @@ Según cómo llega el pedido (principio P1):
 | La oportunidad o el problema | `arbol-de-oportunidades` o `encuadre-del-problema`, modo reencuadre |
 | Saber para quién se idea | `arquetipos` |
 | Los conceptos están y hay que elegir | `priorizacion-de-conceptos` |
+| Profundidad: el pedido llegó chato o genérico | Ofrecer `mejor` en una línea; corre solo si la persona escribe /mejor |
 
 ## Proceso
 

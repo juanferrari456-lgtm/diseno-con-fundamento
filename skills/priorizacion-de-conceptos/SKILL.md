@@ -31,6 +31,7 @@ Según cómo llega el pedido (principio P1):
 | Los conceptos escritos con el mismo formato | `ideacion`, ficha de concepto |
 | Evidencia de deseabilidad | `sintesis-de-entrevistas`, `evidencia` |
 | El concepto elegido y la prueba a diseñar | `prueba-de-conceptos` |
+| Profundidad: el pedido llegó chato o genérico | Ofrecer `mejor` en una línea; corre solo si la persona escribe /mejor |
 
 ## Proceso
 

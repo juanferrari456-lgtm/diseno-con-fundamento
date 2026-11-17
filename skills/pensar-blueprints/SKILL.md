@@ -48,6 +48,7 @@ Según cómo llega el pedido (principio P1, en `references/principios.md`):
 | No están claros los segmentos | `arquetipos` o `muestra-y-reclutamiento` |
 | El modelo está y hay que dibujarlo | Plugin de FigJam "Blueprint from .json", que lee la carpeta directo. `service-blueprint-json` solo si hace falta un `.bp.json` a mano |
 | Hay que priorizar los dolores | `arbol-de-oportunidades` |
+| El pedido llegó chato o genérico y conviene llevarlo a nivel profesional | Ofrecer `mejor` en una línea; corre solo si la persona escribe /mejor |
 
 ## Reglas de escritura
 

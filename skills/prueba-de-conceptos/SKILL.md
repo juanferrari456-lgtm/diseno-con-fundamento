@@ -32,6 +32,7 @@ Según cómo llega el pedido (principio P1):
 | Personas para las sesiones | `muestra-y-reclutamiento` |
 | El servicio actual mapeado, para un role play | `pensar-blueprints` |
 | Las sesiones terminaron y hay que presentar | `creador-de-contenido` |
+| Profundidad: el pedido llegó chato o genérico | Ofrecer `mejor` en una línea; corre solo si la persona escribe /mejor |
 
 ## Proceso
 

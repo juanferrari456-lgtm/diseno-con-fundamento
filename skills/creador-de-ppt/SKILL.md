@@ -19,7 +19,8 @@ mano. Eso es lo que mantiene la consistencia entre decks hechos por personas dis
 1. **Entender el contenido antes de maquetar.** Leer lo que trajo la persona
    (transcripciones, notas, markdown, un documento) y proponer una estructura de deck:
    qué secciones, qué va en cada slide, dónde van los statements. Si el contenido es
-   escaso o ambiguo, preguntar antes de inventar. Esperar el ok de la estructura antes
+   escaso o ambiguo, preguntar antes de inventar. Si el pedido llegó chato o genérico,
+   ofrecer `mejor` en una línea (corre solo si la persona escribe /mejor). Esperar el ok de la estructura antes
    de seguir: corregir una lista cuesta menos que rehacer un deck maquetado.
 2. **Leer `references/narrativa.md`** para el arco del relato y las convenciones de
    copy (títulos-afirmación, pares observación/recomendación, breadcrumbs, traducción al

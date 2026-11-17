@@ -2,7 +2,7 @@
 
 ![Diseño con fundamento | 20 skills de Claude para diseñar servicios](docs/img/portada.png)
 
-20 skills de Claude, en español, para diseño de servicios, design thinking y mejora de procesos. Acompañan el trabajo de punta a punta: del pedido que llega como solución al problema bien planteado, de las fuentes a la síntesis, de la idea a la prueba y de ahí a la presentación.
+21 skills de Claude, en español, para diseño de servicios, design thinking y mejora de procesos. Acompañan el trabajo de punta a punta: del pedido que llega como solución al problema bien planteado, de las fuentes a la síntesis, de la idea a la prueba y de ahí a la presentación.
 
 Están pensadas para cualquier organización y cualquier herramienta, y para quien arranca tanto como para quien tiene años de oficio.
 
@@ -18,18 +18,19 @@ Casi todo lo que sale mal en un proyecto de diseño sale mal antes de diseñar: 
 
 ## Cómo se conectan
 
-Cada línea es una skill que nombra a otra en sus instrucciones: le pide material, le pasa el resultado o le deriva lo que no le toca. Son 127 conexiones. La más conectada es `encuadre-del-problema`, con 22 (en amarillo): no es la que dibuja ni la que presenta, es la que pregunta qué problema estamos resolviendo. El conteo sale de `herramientas/contar-conexiones.py`.
+Cada línea es una skill que nombra a otra en sus instrucciones: le pide material, le pasa el resultado o le deriva lo que no le toca. Son 146 conexiones. La más conectada es `encuadre-del-problema`, con 23 (en amarillo): no es la que dibuja ni la que presenta, es la que pregunta qué problema estamos resolviendo. El conteo sale de `herramientas/contar-conexiones.py`.
 
 ![Mapa de las 20 skills y sus conexiones](docs/img/mapa-de-skills.png)
 
 ## Las skills
 
-Seis etapas y dos skills de base.
+Seis etapas y tres skills de base.
 
 | Etapa | Skill | Qué hace |
 |---|---|---|
 | Base | `inicio` | Arma el contexto de tu organización con una entrevista corta y te dice por dónde empezar |
 | Base | `markdown-converter` | PDF, Word, decks, planillas o audio a Markdown con nombre consistente |
+| Base | `mejor` | Reescribe un pedido para hacerlo más profundo, no más grande. Se llama por nombre: /mejor |
 | Encuadrar | `encuadre-del-problema` | Pasa un pedido a problema antes de diseñar; reencuadra después de investigar |
 | Encuadrar | `mapa-de-stakeholders` | Actores, poder e interés con evidencia, tensiones y a quién hablar primero |
 | Encuadrar | `evidencia` | De la pregunta a las fuentes, la consulta, el análisis y la certeza |

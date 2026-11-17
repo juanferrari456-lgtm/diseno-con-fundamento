@@ -62,6 +62,7 @@ Según cómo llega el pedido (principio P1):
 | El pedido no está encuadrado | `encuadre-del-problema`, bloques A y B |
 | Hay entrevistas sin procesar | `sintesis-de-entrevistas` |
 | Lo que piden es entender qué siente la persona | Es un journey: decirlo |
+| El pedido llegó chato o genérico y conviene llevarlo a nivel profesional | Ofrecer `mejor` en una línea; corre solo si la persona escribe /mejor |
 
 ## Antes de arrancar: ¿esto es un blueprint?
 

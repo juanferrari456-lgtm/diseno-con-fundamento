@@ -44,6 +44,7 @@ Según cómo llega el pedido (principio P1):
 | Evidencia de datos (reclamos, encuestas, analítica) | `evidencia` |
 | Las oportunidades están y hay que idear | `ideacion` |
 | Las soluciones están y hay que elegir cuál probar | `priorizacion-de-conceptos` |
+| Profundidad: el pedido llegó chato o genérico | Ofrecer `mejor` en una línea; corre solo si la persona escribe /mejor |
 
 ## Fuentes
 

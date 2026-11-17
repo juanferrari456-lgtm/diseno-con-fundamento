@@ -32,6 +32,7 @@ Según cómo llega el pedido (principio P1):
 | La pregunta 4 o 5 nombra actores que nadie mapeó | `mapa-de-stakeholders` |
 | Ya hay investigación y hay que elegir qué problema resolver | Modo reencuadre de esta misma skill |
 | El encuadre está y se pide priorizar oportunidades | `arbol-de-oportunidades` |
+| El pedido llegó chato o genérico y conviene llevarlo a nivel profesional | Ofrecer `mejor` en una línea; corre solo si la persona escribe /mejor |
 
 Otras skills la llaman en su propio paso de encuadre y piden solo el bloque que necesitan:
 

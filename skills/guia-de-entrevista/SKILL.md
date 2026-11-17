@@ -35,6 +35,7 @@ Según cómo llega el pedido (principio P1):
 | Saber qué ya responden los datos existentes | `evidencia`, para no preguntar lo que ya se sabe |
 | A quién entrevistar y cuántos | `muestra-y-reclutamiento` |
 | La investigación incluye ir a ver el servicio funcionando | `plan-de-observacion` |
+| Profundidad: el pedido llegó chato o genérico | Ofrecer `mejor` en una línea; corre solo si la persona escribe /mejor |
 
 Si la skill de destino no está, hacer la versión corta de ese paso y decirlo.
 

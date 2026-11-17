@@ -34,6 +34,7 @@ Según cómo llega el pedido (principio P1):
 | Hay guía de entrevista | Tomar sus hipótesis como foco de observación |
 | Se van a hacer entrevistas en el lugar | `muestra-y-reclutamiento`, modo guerrilla |
 | El servicio ya tiene un blueprint | Usar sus pasos para la cobertura y la hoja de registro |
+| Profundidad: el pedido llegó chato o genérico | Ofrecer `mejor` en una línea; corre solo si la persona escribe /mejor |
 
 ## Proceso
 

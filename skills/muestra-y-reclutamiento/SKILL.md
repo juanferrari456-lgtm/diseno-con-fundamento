@@ -35,6 +35,7 @@ Según cómo llega el pedido (principio P1):
 | Hay datos para armar los segmentos y no se consultaron | `evidencia` |
 | Se sabe quién decide y quién opera, pero no está mapeado | `mapa-de-stakeholders` |
 | La muestra está y falta la guía | `guia-de-entrevista` |
+| Profundidad: el pedido llegó chato o genérico | Ofrecer `mejor` en una línea; corre solo si la persona escribe /mejor |
 
 ## Proceso
 

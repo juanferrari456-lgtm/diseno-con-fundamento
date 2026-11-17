@@ -13,7 +13,7 @@ Principios del paquete en `references/principios.md`.
 
 ## Qué necesita para arrancar
 
-El archivo. Para el nombre, la convención de `contexto.md` si existe.
+El archivo. Para el nombre, la convención de `contexto.md` si existe. Si además de convertir hay un pedido de análisis chato o genérico, ofrecer `mejor` en una línea (corre solo si la persona escribe /mejor).
 
 Según cómo llega el pedido (principio P1):
 

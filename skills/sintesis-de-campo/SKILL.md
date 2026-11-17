@@ -45,6 +45,7 @@ Según cómo llega el pedido (principio P1):
 | No hay guía con hipótesis | `guia-de-entrevista` para las próximas; esta sesión va solo con `sintesis-de-entrevistas` |
 | Un segmento queda sin cubrir | `muestra-y-reclutamiento` |
 | Termina la muestra y hay que decidir qué hacer | `arbol-de-oportunidades` o `encuadre-del-problema`, modo reencuadre |
+| El pedido llegó chato o genérico y conviene llevarlo a nivel profesional | Ofrecer `mejor` en una línea; corre solo si la persona escribe /mejor |
 
 ## Qué agrega
 

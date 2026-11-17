@@ -36,6 +36,7 @@ Si no hay investigación: no se escriben arquetipos. Se pueden escribir **proto-
 | Hay entrevistas sin procesar | `sintesis-de-entrevistas` primero |
 | Los arquetipos están y hay que elegir el problema | `encuadre-del-problema`, modo reencuadre |
 | Se pide un journey por arquetipo | `pensar-blueprints` |
+| El pedido llegó chato o genérico y conviene llevarlo a nivel profesional | Ofrecer `mejor` en una línea; corre solo si la persona escribe /mejor |
 
 ## Proceso
 
