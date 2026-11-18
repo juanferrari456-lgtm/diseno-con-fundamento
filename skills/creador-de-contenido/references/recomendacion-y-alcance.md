@@ -1,5 +1,16 @@
 # Recomendación, alcance y gobernanza
 
+## Contenido
+
+- Abrir con lo que mueve la aguja
+- Recomendar con las alternativas a la vista
+- Del mapeo al alcance (corte 10)
+- De la pantalla a la operación sostenible (corte 11)
+- El artefacto según quién lo usa
+- La repregunta del dueño (antes de proponer una mejora)
+- El cierre: decisiones para Producto
+- Antes de la reunión
+
 Cortes 6, 10 y 11 en detalle. Salen de devoluciones reales sobre un entregable que se tomó
 como ejemplo del rol: el relevamiento de un sistema de gestión de unos veinte módulos que
 había que migrar a una plataforma nueva. Los números de los ejemplos son ficticios. El entregable no mostró hallazgos sueltos:

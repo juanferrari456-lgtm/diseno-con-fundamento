@@ -1,5 +1,18 @@
 # Catálogo de arquetipos
 
+## Contenido
+
+- Arquetipos que aceptan spot; `cover` | portada; `agenda` | índice; `section` | divisor de sección; `statement` | una idea sola; `textImage` | explicación con imagen
+- `cards` | comparación de perspectivas; `steps` | método o proceso; `stats` | fila de cifras; `bigStat` | el dato que cambia la conversación; `caseStudy` | ficha de benchmark; `finding` | hallazgo
+- `matrix` | matriz 2×2; `flow` | flujos high level; `closing` | cierre; `blank` | escotilla de escape; `pillars` | ejes o pilares; `journey` | recorrido end-to-end
+- `stage` | ficha de etapa; `quotes` | voz textual; `painsOpportunities` | dolores y oportunidades enfrentados; `linkCard` | anexo o material enlazado; `voice` | voz externa; `annotatedScreen` | misma pantalla, anotaciones que se suman
+- `tree` | árbol de oportunidades en cuatro columnas; `sources` | fuentes lado a lado; Variante: tarjetas negras; Otros usos de cada arquetipo; Arquetipos de relevamiento y propuesta; `scopeGrid` | alcance
+- `scenarios` | escenarios lado a lado; `scenario` | ficha de escenario; `waves` | tablero por olas o niveles; `breakdown` | desglose de un total; `scale` | escala ordenada; `profiles` | fichas de perfil
+- `conclusions` | conclusiones con decisiones; Arquetipos de síntesis; `rainbow` | gráfico arcoíris; `emotionCurve` | curva emocional; `hypothesisBoard` | tablero de hipótesis; `ecosystem` | ecosistema
+- `archetypes` | elenco; `perSegment` | cómo lo vive cada uno; `insight` | insight a sangre; `causalChain` | cadena causal; `unknowns` | lo que todavía no sabemos; Arquetipos de recomendación y anexo
+- `triangulation` | triangulación; `comparisonStat` | cifra contra cifra; `ownerCheck` | qué ya tiene dueño; `ownershipMatrix` | matriz de responsabilidades; `keyResults` | resultados clave; `decisionAsk` | decisiones que pedimos
+- `sampleTable` | tabla de muestra; `verbatimGrid` | verbatims
+
 Cada método de `deck-kit.js` corresponde a un arquetipo. Elegir por **qué hace el
 contenido**, no por cuántas cosas hay que poner.
 

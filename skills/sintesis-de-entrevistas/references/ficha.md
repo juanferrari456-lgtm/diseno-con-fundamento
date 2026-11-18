@@ -1,5 +1,12 @@
 # La ficha de entrevista
 
+## Contenido
+
+- Plantilla
+- Reglas de extracción
+- Líneas que sirven de sticky
+- Economía de la cita
+
 Un archivo por entrevista, escrito una vez. Es la única fuente del corpus. Las
 diez secciones son fijas y el script las parsea por número: no cambiar
 encabezados ni orden de columnas. No usar `|` dentro de una celda (parte la fila).

@@ -1,5 +1,15 @@
 # De la desgrabación al blueprint
 
+## Contenido
+
+- 1. Qué material tenés y qué le falta
+- 2. Primera pasada: marcar, no resumir
+- 3. Segunda pasada: la secuencia
+- 4. Tercera pasada: bajar los carriles
+- 5. Contradicciones
+- 6. Escribir las tarjetas
+- 7. Lo que nunca se hace
+
 Cómo se pasa de material crudo (entrevistas, notas de campo, manuales, tickets)
 a los momentos y las tarjetas, sin inventar y sin perder lo que el material sí
 dice.

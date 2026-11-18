@@ -1,5 +1,15 @@
 # Campo con guía de hipótesis
 
+## Contenido
+
+- Tabla de inicio
+- Sección 11
+- Reglas
+- Comandos
+- Ajustes a la guía entre entrevistas
+- Cortes
+- Observación de campo
+
 La ficha 01 a 10 es la de `sintesis-de-entrevistas` y no cambia. Esta skill
 suma filas a la tabla de inicio y una sección 11. `corpus.js` la ignora y
 `campo.js` la lee para armar `TABLERO.md`.

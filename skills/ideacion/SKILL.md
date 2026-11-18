@@ -5,7 +5,7 @@ description: "Lleva de una oportunidad priorizada a conceptos comparables: escri
 
 # Ideación
 
-Las primeras tres ideas de cualquier equipo son las tres ideas de todos los equipos: la app, el panel, el cambio de proceso. Esta skill se asegura de que existan la cuarta a la vigésima antes de converger, porque no se puede elegir una opción audaz que nunca estuvo sobre la mesa. Y después escribe las elegidas en un formato fijo, para que compitan por lo que son y no por quién las escribió mejor.
+Lleva las ideas más allá de las tres obvias antes de converger, y escribe las elegidas en un formato fijo para que compitan por lo que son y no por cómo se redactaron.
 
 Principios del paquete en `references/principios.md`.
 
@@ -31,6 +31,7 @@ Según cómo llega el pedido (principio P1):
 | La oportunidad o el problema | `arbol-de-oportunidades` o `encuadre-del-problema`, modo reencuadre |
 | Saber para quién se idea | `arquetipos` |
 | Los conceptos están y hay que elegir | `priorizacion-de-conceptos` |
+| Profundidad: el pedido llegó chato o genérico | Ofrecer `mejor` en una línea; corre solo si la persona escribe /mejor |
 
 ## Proceso
 

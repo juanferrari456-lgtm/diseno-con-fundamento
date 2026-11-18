@@ -5,7 +5,7 @@ description: "Planifica relevamientos y observación del servicio funcionando: v
 
 # Plan de observación
 
-Observar capta lo que una entrevista no puede: el atajo tan habitual que nadie lo menciona, el papel pegado en el monitor que hace el trabajo de un sistema, la fila que se forma siempre a la misma hora. El oficio es llegar con la mirada preparada y la mano suelta: saber qué buscar y estar listo para ver otra cosa.
+Prepara la observación del servicio funcionando: saber qué buscar y dejar lugar para ver otra cosa.
 
 Principios del paquete en `references/principios.md`.
 
@@ -34,6 +34,7 @@ Según cómo llega el pedido (principio P1):
 | Hay guía de entrevista | Tomar sus hipótesis como foco de observación |
 | Se van a hacer entrevistas en el lugar | `muestra-y-reclutamiento`, modo guerrilla |
 | El servicio ya tiene un blueprint | Usar sus pasos para la cobertura y la hoja de registro |
+| Profundidad: el pedido llegó chato o genérico | Ofrecer `mejor` en una línea; corre solo si la persona escribe /mejor |
 
 ## Proceso
 

@@ -1,6 +1,6 @@
 ---
 name: sintesis-de-entrevistas
-description: "Convierte transcripciones o notas de entrevistas de investigación (discovery, validación, guerrilla, grupales o shadowing) en una ficha .md con evidencia anclada y mantiene un corpus consultable del proyecto: dolores consolidados por causa, recurrencia, contradicciones, vacíos e insights al cierre de cada lote. Usar cuando llegue una transcripción, desgrabación, VTT o notas crudas de una entrevista, para cerrar un lote de entrevistas, y para consultar lo que dijeron los entrevistados antes de un blueprint, un journey, un árbol, un deck o un taller. Para reuniones internas de trabajo va sintesis-de-reuniones; si la entrevista sigue una guía con hipótesis, sumar sintesis-de-campo."
+description: "Convierte transcripciones o notas de entrevistas de investigación (discovery, validación, guerrilla, grupales o shadowing) en una ficha .md con evidencia anclada, opcionalmente un bloque para pegar en FigJam, y mantiene un corpus consultable del proyecto: dolores consolidados por causa, recurrencia, contradicciones, vacíos e insights al cierre de cada lote. Usar cuando llegue una transcripción, desgrabación, VTT o notas crudas de una entrevista, para cerrar un lote de entrevistas, y para consultar lo que dijeron los entrevistados antes de un blueprint, un journey, un árbol, un deck o un taller. Para reuniones internas de trabajo va sintesis-de-reuniones; si la entrevista sigue una guía con hipótesis, sumar sintesis-de-campo."
 ---
 
 # Síntesis de entrevistas
@@ -42,6 +42,7 @@ Según cómo llega el pedido (principio P1):
 | Es una reunión interna | `sintesis-de-reuniones` |
 | El entrevistado ofreció un contacto | Sumarlo a `mapa-de-stakeholders` con la entrevista como fuente |
 | Cerró el lote y se pide qué hacer con todo esto | `arbol-de-oportunidades` o `arquetipos` |
+| El pedido llegó chato o genérico y conviene llevarlo a nivel profesional | Ofrecer `mejor` en una línea; corre solo si la persona escribe /mejor |
 
 ## Arquitectura
 
@@ -120,6 +121,8 @@ Preguntas
 
 Sin resumen de hallazgos, sin tabla de mapeo, sin explicar los comandos.
 
+Si la persona trabaja en FigJam o pide el bloque para el board, sumar debajo, en un solo bloque de código, la salida de `node $C figjam E15 --dir $W` (al cerrar el lote, `figjam --proyecto`). Reglas de forma en `references/figjam.md`.
+
 ## Reglas de extracción
 
 - Cuantificadores vagos se quedan vagos: "muchas veces" no se convierte en un número.
@@ -187,6 +190,7 @@ Las palabras del entrevistado quedan como las dijo. No se mejora una cita, no se
 
 - `references/ficha.md`: plantilla y reglas de la ficha.
 - `references/corpus.md`: el corpus, sus comandos y el mapeo.
+- `references/figjam.md`: el bloque para pegar en FigJam y cómo escribir la ficha para que sus líneas sirvan de sticky.
 - `references/way-of-working.md`: cómo organizar un proyecto de muchas entrevistas.
 - `references/artefactos.md`: índice cuando hay blueprints, mapas y otros artefactos.
 - `references/memoria.md`: qué puede ir a una memoria y qué nunca.

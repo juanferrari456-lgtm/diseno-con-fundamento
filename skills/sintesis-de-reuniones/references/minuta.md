@@ -1,5 +1,16 @@
 # La minuta de reunión
 
+## Contenido
+
+- Plantilla
+- Qué es cada cosa
+- Seguimiento de lo anterior (sección 05)
+- Evidencia
+- Resumen automático
+- Nombres
+- Qué no entra
+- Redacción
+
 Un archivo por reunión, escrito una vez. Es la fuente del seguimiento. Las doce
 secciones son fijas y el script las parsea por número: no cambiar encabezados ni
 orden de columnas. No usar `|` dentro de una celda (parte la fila). Si una

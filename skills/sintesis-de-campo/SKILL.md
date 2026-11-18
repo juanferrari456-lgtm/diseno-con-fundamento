@@ -45,6 +45,7 @@ Según cómo llega el pedido (principio P1):
 | No hay guía con hipótesis | `guia-de-entrevista` para las próximas; esta sesión va solo con `sintesis-de-entrevistas` |
 | Un segmento queda sin cubrir | `muestra-y-reclutamiento` |
 | Termina la muestra y hay que decidir qué hacer | `arbol-de-oportunidades` o `encuadre-del-problema`, modo reencuadre |
+| El pedido llegó chato o genérico y conviene llevarlo a nivel profesional | Ofrecer `mejor` en una línea; corre solo si la persona escribe /mejor |
 
 ## Qué agrega
 
@@ -58,7 +59,7 @@ Según cómo llega el pedido (principio P1):
 
 ### 1 | Preparar
 
-Leer `$B/SKILL.md` y `$B/references/ficha.md` (reglas de la base) y `references/campo.md` (esta skill). Después:
+Leer `$B/references/ficha.md` (plantilla y reglas de la ficha base) y `references/campo.md` (esta skill). No hace falta abrir el `SKILL.md` de la base: los comandos que usa esta skill están acá. Después:
 
 ```bash
 node $C init <origen> --dir $W

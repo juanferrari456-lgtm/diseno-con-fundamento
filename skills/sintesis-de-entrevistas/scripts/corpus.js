@@ -12,6 +12,7 @@
      node corpus.js add <ficha.md> [--dir .]   parsea una ficha y la incorpora
      node corpus.js map E13-D1=DC10 ...        mapea dolores a consolidados
      node corpus.js build                      regenera ACUMULADO.md
+     node corpus.js figjam <E13|--proyecto>    bloque para pegar en el board
      node corpus.js query [opciones]           consulta sin abrir el acumulado
      node corpus.js check <ficha.md>           revisa la forma de una ficha
    ========================================================================== */
@@ -363,6 +364,60 @@ function corta(t, max) {
   return t.length <= max ? t : t.slice(0, max - 1).replace(/\s+\S*$/, '') + '...';
 }
 
+/* ================================================================= FIGJAM */
+/* Bloque para pegar en FigJam: cada linea es un sticky. Reglas en references/figjam.md. */
+
+function sev(s) {
+  s = s || '';
+  var semaforos = ['\uD83D\uDD34', '\uD83D\uDFE1', '\uD83D\uDFE2'];  // rojo, amarillo, verde
+  for (var i = 0; i < semaforos.length; i++) {
+    if (s.indexOf(semaforos[i]) > -1) return semaforos[i] + ' ';
+  }
+  return '';
+}
+
+function cmdFigjam(quien) {
+  var c = leerCorpus();
+  var L = [];
+  if (quien && quien !== '--proyecto') {
+    var cod = quien.toUpperCase();
+    var e = c.entrevistas.filter(function (x) { return x.codigo === cod; })[0];
+    if (!e) salir('no encuentro ' + cod);
+    L.push('CONTEXTO ' + cod);
+    L.push(corta(e.perfil, 100) + ' [' + cod + ']');
+    L.push('');
+    L.push('DOLORES');
+    c.dolores.filter(function (d) { return d.codigo === cod; })
+      .forEach(function (d) { L.push(sev(d.severidad) + corta(d.texto, 100) + ' [' + cod + ']'); });
+    L.push('');
+    L.push('WORKAROUNDS');
+    c.workarounds.filter(function (w) { return w.codigo === cod; })
+      .forEach(function (w) { L.push(corta(w.texto, 100) + ' [' + cod + ']'); });
+    L.push('');
+    L.push('DATOS DUROS');
+    c.datos.filter(function (d) { return d.codigo === cod; })
+      .forEach(function (d) { L.push(corta(d.dato + ': ' + d.valor, 100) + ' [' + cod + ']'); });
+    L.push('');
+    L.push('PEDIDOS EXPLICITOS');
+    c.deseos.filter(function (d) { return d.codigo === cod; })
+      .forEach(function (d) { L.push(corta(d.texto.replace(/\s*\|?\s*\[E\d+\].*$/, ''), 100) + ' [' + cod + ']'); });
+    L.push('');
+    L.push('VACIOS');
+    c.vacios.filter(function (v) { return v.codigo === cod; })
+      .forEach(function (v) { L.push(corta(v.texto, 100) + ' [' + cod + ']'); });
+  } else {
+    var rec = recurrencia(c), n = c.entrevistas.length;
+    var orden = Object.keys(rec).sort(function (a, b) { return rec[b].codigos.length - rec[a].codigos.length; });
+    L.push('DOLORES POR RECURRENCIA');
+    orden.forEach(function (k) {
+      L.push((severidadCross(rec[k].sev).replace('[SIN DATO]', '') + ' ' +
+             corta(c.consolidados[k].label, 80) + ' (' + rec[k].codigos.length + '/' + n + ') [' +
+             rec[k].codigos.join(' ') + ']').trim());
+    });
+  }
+  console.log(L.join('\n').replace(/\n{3,}/g, '\n\n'));
+}
+
 /* ================================================================= MIGRAR */
 /* Levanta un acumulado escrito a mano y lo convierte en corpus.json, para no
    perder las entrevistas ya procesadas. Los dolores de entrevistas sin ficha
@@ -692,6 +747,7 @@ switch (cmd) {
   case 'add':    cmdAdd(args[1]); break;
   case 'map':    cmdMap(args.slice(1)); break;
   case 'build':  cmdBuild(); break;
+  case 'figjam': cmdFigjam(args[1]); break;
   case 'migrar': cmdMigrar(args[1]); break;
   case 'query':  cmdQuery(args.slice(1)); break;
   case 'check':  cmdCheck(args[1]); break;
@@ -699,7 +755,7 @@ switch (cmd) {
   case 'renombrar': cmdRenombrar(args[1], args[2]); break;
   default:
     console.log('uso:\n  node corpus.js init <origen>\n  node corpus.js limpiar <transcripcion> [--out f]\n  node corpus.js add <ficha.md>\n  node corpus.js map E13-D1=DC10 E13-D3=+Nuevo\n' +
-                '  node corpus.js build\n' +
+                '  node corpus.js build\n  node corpus.js figjam <E13|--proyecto>\n' +
                 '  node corpus.js migrar <ACUMULADO-viejo.md>\n' +
                 '  node corpus.js query [--top 10|--dc DC2|--perfil E13|--buscar txt|--vacios|--datos|--sin-mapear]\n' +
                 '  node corpus.js check <ficha.md>\n  node corpus.js auditar [--perfil E22]\n  (agrega --dir <carpeta> para trabajar fuera del directorio actual)');

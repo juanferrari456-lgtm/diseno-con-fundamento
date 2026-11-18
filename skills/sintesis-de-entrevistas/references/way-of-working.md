@@ -1,5 +1,14 @@
 # Way of working | 15 entrevistas sin quemar tokens
 
+## Contenido
+
+- 0 | Preparar el Project (una vez)
+- 1 | Migrar lo que ya existe (un chat, sin transcripciones)
+- 2 | Una entrevista, un chat
+- 3 | Presupuesto
+- 4 | Cierre de lote (un chat)
+- 5 | Preguntarle a Claude después
+
 Tres momentos: preparar el Project una vez, procesar una entrevista por chat, y
 consultar después sin cargar documentos enteros.
 

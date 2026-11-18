@@ -32,6 +32,7 @@ Según cómo llega el pedido (principio P1):
 | Quiere saber qué datos sirven para una pregunta puntual | `evidencia` |
 | Trae una transcripción o un documento para convertir | `markdown-converter` |
 | Otra skill la llamó por falta de contexto | Armar solo el bloque que esa skill necesita y volver |
+| El pedido llegó chato o genérico y conviene llevarlo a nivel profesional | Ofrecer `mejor` en una línea; corre solo si la persona escribe /mejor |
 
 ## Proceso
 
@@ -86,6 +87,7 @@ Cerrar con el mapa del paquete (abajo) y una recomendación concreta: "con lo qu
 | Una idea elegida y hay que probarla | `prueba-de-conceptos` |
 | Hay que contar lo que se hizo | `creador-de-contenido`, después `creador-de-ppt` |
 | Un PDF, deck, planilla o audio para pasar a texto | `markdown-converter` |
+| Un pedido que se siente chato y querés la versión de un profesional top | `mejor` (escribiendo /mejor) |
 
 ## Formato de salida
 
@@ -101,7 +103,7 @@ Cerrar con el mapa del paquete (abajo) y una recomendación concreta: "con lo qu
 - Completar huecos con lo que "seguramente" pasa en una organización de ese rubro.
 - Sugerir herramientas como si fueran requisito.
 - Fijar `UMBRAL_VIGENCIA` por la persona en vez de dejarlo como decisión del equipo.
-- Terminar con la lista de 20 skills en vez de decir por cuál empezar.
+- Terminar con la lista de 21 skills en vez de decir por cuál empezar.
 
 ## Referencias
 

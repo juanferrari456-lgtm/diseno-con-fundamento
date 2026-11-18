@@ -1,5 +1,14 @@
 # El criterio: decisiones de service design antes del JSON
 
+## Contenido
+
+- 1. Encuadre
+- 2. Cómo se decide un momento
+- 3. Backstage o soporte, resuelto
+- 4. Capas secundarias, cuándo sí
+- 5. Rúbrica: diez preguntas antes de entregar
+- 6. Qué pasa después del blueprint
+
 Esta referencia es para los casos que el SKILL.md resume en una línea. Leela
 cuando el servicio sea grande, cuando el material se contradiga, o cuando el
 blueprint tenga que resistir una reunión con stakeholders.
