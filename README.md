@@ -1,6 +1,6 @@
 # Diseño con fundamento
 
-![Diseño con fundamento | 20 skills de Claude para diseñar servicios](docs/img/portada.png)
+![Diseño con fundamento | 21 skills de Claude para diseñar servicios](docs/img/portada.png)
 
 21 skills de Claude, en español, para diseño de servicios, design thinking y mejora de procesos. Acompañan el trabajo de punta a punta: del pedido que llega como solución al problema bien planteado, de las fuentes a la síntesis, de la idea a la prueba y de ahí a la presentación.
 
@@ -18,9 +18,9 @@ Casi todo lo que sale mal en un proyecto de diseño sale mal antes de diseñar: 
 
 ## Cómo se conectan
 
-Cada línea es una skill que nombra a otra en sus instrucciones: le pide material, le pasa el resultado o le deriva lo que no le toca. Son 146 conexiones. La más conectada es `encuadre-del-problema`, con 23 (en amarillo): no es la que dibuja ni la que presenta, es la que pregunta qué problema estamos resolviendo. El conteo sale de `herramientas/contar-conexiones.py`.
+Cada línea es una skill que nombra a otra en sus instrucciones: le pide material, le pasa el resultado o le deriva lo que no le toca. Son 146 conexiones. La más conectada es `encuadre-del-problema`, con 23 (en amarillo): no es la que dibuja ni la que presenta, es la que pregunta qué problema estamos resolviendo. El conteo sale de `herramientas/contar-conexiones.py` y las imágenes de `herramientas/dibujar-imagenes.py`.
 
-![Mapa de las 20 skills y sus conexiones](docs/img/mapa-de-skills.png)
+![Mapa de las 21 skills y sus conexiones](docs/img/mapa-de-skills.png)
 
 ## Las skills
 
@@ -100,7 +100,7 @@ compartido/        principios, escala de certeza y plantilla de contexto (fuente
 skills/<skill>/    SKILL.md, references/, scripts/, assets/
 instalar/          un .zip por skill
 docs/img/          imágenes del README
-herramientas/      armar-zips.py, barrer-datos.py y contar-conexiones.py
+herramientas/      armar-zips.py, barrer-datos.py, contar-conexiones.py y dibujar-imagenes.py
 .claude-plugin/    plugin.json y marketplace.json
 ```
 
