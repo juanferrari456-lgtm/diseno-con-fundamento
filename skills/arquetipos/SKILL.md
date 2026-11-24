@@ -5,7 +5,7 @@ description: "Arma arquetipos (personas) desde investigación real: agrupa a las
 
 # Arquetipos desde evidencia
 
-Un arquetipo es una compresión de la investigación: el resumen con forma de persona de gente que de verdad se estudió. Sin investigación detrás no es compresión, es ficción. Esta skill junta tres herramientas que se suelen hacer por separado: la persona, sus trabajos por hacer y su mapa de empatía.
+Un arquetipo resume con forma de persona a gente que de verdad se estudió. Esta skill junta tres herramientas que se suelen hacer por separado: la persona, sus trabajos por hacer y su mapa de empatía.
 
 Principios del paquete en `references/principios.md`.
 
@@ -36,6 +36,7 @@ Si no hay investigación: no se escriben arquetipos. Se pueden escribir **proto-
 | Hay entrevistas sin procesar | `sintesis-de-entrevistas` primero |
 | Los arquetipos están y hay que elegir el problema | `encuadre-del-problema`, modo reencuadre |
 | Se pide un journey por arquetipo | `pensar-blueprints` |
+| El pedido llegó chato o genérico y conviene llevarlo a nivel profesional | Ofrecer `mejor` en una línea; corre solo si la persona escribe /mejor |
 
 ## Proceso
 

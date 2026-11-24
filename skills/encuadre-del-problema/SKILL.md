@@ -32,6 +32,7 @@ Según cómo llega el pedido (principio P1):
 | La pregunta 4 o 5 nombra actores que nadie mapeó | `mapa-de-stakeholders` |
 | Ya hay investigación y hay que elegir qué problema resolver | Modo reencuadre de esta misma skill |
 | El encuadre está y se pide priorizar oportunidades | `arbol-de-oportunidades` |
+| El pedido llegó chato o genérico y conviene llevarlo a nivel profesional | Ofrecer `mejor` en una línea; corre solo si la persona escribe /mejor |
 
 Otras skills la llaman en su propio paso de encuadre y piden solo el bloque que necesitan:
 
@@ -91,7 +92,7 @@ En esos casos, devolver solo ese bloque, sin la plantilla completa.
 1. Leer todo el material disponible (mensaje, archivos, minutas, `contexto.md`). Responder con eso todo lo que se pueda. No preguntar lo que ya está escrito.
 2. Reescribir el pedido como problema (pregunta 1). Si hay más de un actor posible, escribir una reescritura por actor y decir cuál tiene la necesidad.
 3. Responder cada pregunta del bloque que corresponda con dato, fuente y certeza. Lo que no tiene fuente se escribe como hipótesis. Lo que no se sabe se escribe "sin dato".
-4. **Pregunta 3 con material previo.** Si hay documentos, estudios o datos anteriores: listar qué afirma cada uno con fuente y fecha, separar lo establecido de lo sugerente (método flojo, muestra chica, de segunda mano o pasado de `UMBRAL_VIGENCIA`, con el motivo en una línea), marcar las contradicciones y cerrar con "lo que solo responde la investigación nueva". Si se buscó y no se encontró nada, escribir "nada encontrado": también es un resultado.
+4. **Pregunta 3 con material previo.** Si hay documentos, estudios o datos anteriores: listar qué afirma cada uno con fuente y fecha, separar lo establecido de lo sugerente (método flojo, muestra chica, de segunda mano o pasado de `UMBRAL_VIGENCIA`, con el motivo en una línea; si `contexto.md` no lo define, no descartar por antigüedad y anotar la fecha de cada fuente), marcar las contradicciones y cerrar con "lo que solo responde la investigación nueva". Si se buscó y no se encontró nada, escribir "nada encontrado": también es un resultado.
 5. Revisar cada respuesta contra la columna "respuesta débil" y marcar las que fallan, en una línea cada una.
 6. **Freno.** Si el pedido llegó como solución, mostrar el problema reescrito en una línea (actor, necesidad, consecuencia, certeza) y esperar el ok antes de seguir con el resto. Si llegó como problema o la persona pidió ir directo, seguir.
 7. Cerrar con el alcance en tres listas y los supuestos ordenados.

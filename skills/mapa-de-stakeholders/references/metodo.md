@@ -1,5 +1,15 @@
 # Método, enumerar, calificar, priorizar, ordenar
 
+## Contenido
+
+- 1. Paso 1, Enumerar
+- 2. Paso 2, Calificar
+- 3. Paso 3, Priorizar
+- 4. Paso 4, Ordenar en niveles y nombrarlos
+- 5. Tensiones y coaliciones
+- 6. Cómo tratar cada tipo de input
+- 7. Rúbrica de cierre
+
 Índice:
 1. Paso 1, Enumerar
 2. Paso 2, Calificar (escalas de poder e interés)

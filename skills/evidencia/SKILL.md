@@ -37,6 +37,7 @@ Según cómo llega el pedido (principio P1):
 | Ninguna fuente existente responde y hace falta escuchar a personas | `guia-de-entrevista` o `plan-de-observacion` |
 | La evidencia va a un árbol de oportunidades | `arbol-de-oportunidades`, con tipo de fuente, origen y período de cada pieza |
 | Se sube una transcripción de entrevista | `sintesis-de-entrevistas` |
+| El pedido llegó chato o genérico y conviene llevarlo a nivel profesional | Ofrecer `mejor` en una línea; corre solo si la persona escribe /mejor |
 
 ## Proceso
 

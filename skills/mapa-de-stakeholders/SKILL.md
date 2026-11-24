@@ -37,6 +37,7 @@ Según cómo llega el pedido (principio P1):
 | No está claro qué problema resuelve el proyecto ni para quién | `encuadre-del-problema`, bloque A |
 | El mapa está y se pide planificar entrevistas | `muestra-y-reclutamiento` y `guia-de-entrevista` |
 | Aparece un actor nuevo en una entrevista | Sumarlo al mapa con la entrevista como fuente |
+| El pedido llegó chato o genérico y conviene llevarlo a nivel profesional | Ofrecer `mejor` en una línea; corre solo si la persona escribe /mejor |
 
 ## La regla que ordena todo
 
@@ -60,7 +61,7 @@ Este trabajo se hace sobre material desprolijo, donde es fácil inventar un apel
 
 - Nunca completar apellidos, cargos, áreas ni jerarquías que no estén en el material. Si falta, queda vacío con `[VERIFICAR]`.
 - Marcar `[VERIFICAR]` en toda calificación inferida del tono de una conversación en vez de un hecho.
-- Marcar `[VERIFICAR]` lo que venga de documentos más viejos que `UMBRAL_VIGENCIA`.
+- Marcar `[VERIFICAR]` lo que venga de documentos más viejos que `UMBRAL_VIGENCIA`. Si `contexto.md` no lo define, anotar la fecha del documento al lado del dato y no marcar por antigüedad.
 
 ## Campos mínimos de cada actor
 

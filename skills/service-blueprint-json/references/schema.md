@@ -1,5 +1,14 @@
 # The `.json` format | spec `bp/2`
 
+## Contents
+
+- Skeleton
+- A step
+- Optional fields (plugin build 14 and later)
+- Reading `pbp/1` directly
+- What the plugin checks before drawing
+- What the board keeps
+
 The blueprint is a JSON file. One field, one piece of data: no tables, no
 `<br>`, no emoji that mean something, no micro syntax inside a cell.
 

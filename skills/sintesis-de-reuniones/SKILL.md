@@ -39,6 +39,7 @@ Según cómo llega el pedido (principio P1):
 | Es un kickoff | Pasar lo dicho por `encuadre-del-problema`, bloque A. Lo que la reunión no respondió va a la 11 como `[NO DEFINIDO]` |
 | En la reunión aparecen actores nuevos que influyen en la iniciativa | Sugerir sumarlos a `mapa-de-stakeholders` |
 | Es una entrevista, no una reunión interna | `sintesis-de-entrevistas` |
+| El pedido llegó chato o genérico y conviene llevarlo a nivel profesional | Ofrecer `mejor` en una línea; corre solo si la persona escribe /mejor |
 
 ## Dónde viven los archivos
 

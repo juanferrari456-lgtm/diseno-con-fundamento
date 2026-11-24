@@ -1,5 +1,21 @@
 # Repartir en carriles: casos borde
 
+## Contenido
+
+- Un sistema hace algo solo
+- Un tercero que no es la organización
+- Autoservicio
+- El cliente es interno
+- Una reunión entre dos áreas internas
+- Algo que pasa "todo el tiempo"
+- Dudas entre backstage y soporte
+- Un momento donde no pasa nada visible
+- El mismo actor en dos carriles
+- Frontstage con personas y frontstage con máquinas
+- Varios clientes en el mismo recorrido
+- Cuando falta el actor
+- Cuántas tarjetas por celda
+
 Los cinco carriles por defecto son evidencias (EV), customer journey (CJ),
 frontstage (FS), backstage (BS) y procesos de soporte (PS). El criterio base
 está en el SKILL.md. Acá están los casos que se discuten de verdad.

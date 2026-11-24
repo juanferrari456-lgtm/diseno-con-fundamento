@@ -19,12 +19,9 @@ Principios del paquete en `references/principios.md`.
 | Un número no tiene período, fuente o intervalo | `evidencia` |
 | Las oportunidades no cuelgan de un dolor | `arbol-de-oportunidades` |
 | El contenido está y falta el armado visual | `creador-de-ppt` |
+| El pedido llegó chato o genérico y conviene llevarlo a nivel profesional | Ofrecer `mejor` en una línea; corre solo si la persona escribe /mejor |
 
 Según cómo llega el pedido (principio P1): con material completo, proponer los mensajes y esperar el ok; con huecos, preguntar primero quién decide y qué tiene que decidir; para alguien que arranca, explicar en una línea la regla que ordena todo y trabajar los mensajes juntos.
-
-## Por qué importa ahora
-
-Cuando cualquiera produce una interfaz, un mapeo o un informe en minutos, el valor del rol está en haber decidido qué valía la pena hacer. El riesgo pasa del *cómo lo hacemos* al *qué vale la pena hacer*, y deja tres deudas a la vista: **accountability** (asumir una posición), **juicio** (hacer explícito qué consideramos bueno) e **impacto** (mostrar qué cambió gracias a nuestras decisiones). Los cortes 6 y 7 existen para eso.
 
 ## Hasta dónde llega Service Design
 
@@ -104,3 +101,4 @@ Lo sensible (nombres, evaluación de roles, rentabilidad) no se diluye hasta que
 - `references/recursos-de-relato.md`: recursos para contar (cuándo sí, cuándo no y con qué slide se arma cada uno).
 - `references/recomendacion-y-alcance.md`: cortes 6, 10 y 11 en detalle, apertura, escenarios con la recomendada y sus contras, decisión de alcance, gobernanza y cierre con decisiones para Producto.
 - `references/rubrica.md`: auditoría previa a presentar, preguntas de un stakeholder senior y cómo procesar una devolución.
+- `references/principios.md` y `references/certeza-y-muestras.md`: principios y escala de certeza del paquete.

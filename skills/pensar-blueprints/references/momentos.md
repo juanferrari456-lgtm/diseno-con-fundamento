@@ -1,5 +1,16 @@
 # Momentos, decisiones y hallazgos
 
+## Contenido
+
+- 1. Un momento
+- 2. Esperas
+- 3. Decisión, variante o blueprint
+- 4. Puntos de falla y momentos de la verdad
+- 5. Capas y las tres líneas
+- 6. Hallazgos con fuente
+- 7. Secciones opcionales
+- 8. Tiempo y métricas
+
 Dentro de un blueprint ya cortado, cómo se decide cada pieza. Un momento es una
 unidad de intención del cliente, y lo que la organización hace mientras tanto
 es todo lo que haga falta, sin tope.

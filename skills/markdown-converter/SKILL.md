@@ -13,7 +13,7 @@ Principios del paquete en `references/principios.md`.
 
 ## Qué necesita para arrancar
 
-El archivo. Para el nombre, la convención de `contexto.md` si existe.
+El archivo. Para el nombre, la convención de `contexto.md` si existe. Si además de convertir hay un pedido de análisis chato o genérico, ofrecer `mejor` en una línea (corre solo si la persona escribe /mejor).
 
 Según cómo llega el pedido (principio P1):
 
@@ -27,8 +27,6 @@ Según cómo llega el pedido (principio P1):
 uvx markitdown entrada.docx -o salida.md
 uvx --from "markitdown[pdf]" markitdown entrada.pdf -o salida.md   # PDF necesita el extra
 ```
-
-Otras opciones útiles: `-x` para indicar la extensión cuando se lee de stdin, `-d` con `-e <endpoint>` para usar Azure Document Intelligence en PDFs complejos.
 
 Después de convertir, revisar la extracción. Los decks con layout multicolumna salen con las columnas entrelazadas: reconstruir el orden de lectura real antes de entregar.
 

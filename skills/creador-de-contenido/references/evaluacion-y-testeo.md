@@ -1,5 +1,15 @@
 # Corte 8 | De la observación a la evaluación
 
+## Contenido
+
+- Hipótesis testeables
+- Atributos de calidad y criterio de aprobado
+- La tarea a la vista
+- Métrica de acierto, siempre y del mismo modo
+- Severidad de los hallazgos
+- El momento de decision-making
+- Conectar el hallazgo con el negocio
+
 Aplica a todo entregable que reporte un testeo, una validación o cualquier instancia
 donde se fue a medir algo, no solo a observarlo. La diferencia no es de método, es de
 qué puede hacer el otro con el resultado.

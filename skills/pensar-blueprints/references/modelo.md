@@ -1,5 +1,12 @@
 # El formato del modelo | spec `pbp/1`
 
+## Contenido
+
+- arquitectura.json
+- BPn-slug.json
+- Fuentes
+- Lo que revisa el check
+
 Una carpeta por proyecto y estado. As-is y to-be son carpetas distintas.
 
 ```
