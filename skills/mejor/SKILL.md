@@ -33,7 +33,8 @@ El prompt nuevo pide lo que salió de las cinco respuestas: desde qué material 
 - Numera pasos solo si el orden cambia el resultado. Si no, da el objetivo y el criterio de bien hecho y deja el cómo; los métodos del punto 4 van con su nombre aunque no estén numerados.
 - Si el resultado se apoya en material, pide que cada afirmación diga de qué parte sale y que marque lo que falta en vez de completarlo.
 - Si el criterio de bien hecho es difícil de describir, pide como paso previo casos reales ya resueltos para usarlos de ejemplo. No los inventa.
-- Si mezcla piezas de distinto tipo (contexto, material, instrucciones, ejemplos, validación), cada una va en su etiqueta XML con un nombre que diga lo que envuelve, y el prompt se refiere a ellas por ese nombre. El material largo va arriba de las instrucciones; varios documentos van cada uno en su `<documento>` con `<fuente>`. Si el prompt es corto y de una sola pieza, sin etiquetas: ordenan, no agregan.
+- Si mezcla piezas de distinto tipo (contexto, material, instrucciones, ejemplos, validación), cada una va en su etiqueta XML con un nombre que diga lo que envuelve, y el prompt se refiere a ellas por ese nombre. El material largo va arriba de las instrucciones; varios documentos van cada uno en su `<documento indice="n">` con `<fuente>` y `<contenido>`. Si pide una salida con partes, dice en qué etiqueta va cada una. Si el prompt es corto y de una sola pieza, sin etiquetas: ordenan, no agregan.
+- Si el material es largo, cierra con una oración que repite la tarea y la regla que más importa.
 
 ## Antes de entregar, controlar
 
