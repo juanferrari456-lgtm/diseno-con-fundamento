@@ -15,9 +15,15 @@ Principios del paquete en `references/principios.md`. Para el punto 4, la escala
 
 El pedido o prompt a profundizar. Si no viene en el mensaje, tomar el último pedido de la conversación. Si no hay ninguno, preguntar cuál (una sola pregunta).
 
+Si quien pide está arrancando (pide que lo guíen o no sabe qué tiene a mano), explicar en una línea para qué sirve cada uno de los cuatro bloques y, donde haya que elegir, ofrecer dos o tres opciones concretas en lugar de una pregunta abierta.
+
+Si el pedido llega como una solución ya decidida ("hagamos una encuesta", "sumá un botón") y no hay un problema encuadrado, el prompt reescrito arranca por encuadrarlo con `encuadre-del-problema`. Si esa skill no está instalada, el prompt pide como paso previo escribir el problema en tres líneas: actor, necesidad y consecuencia.
+
 ## Antes de reescribir, responder cuatro cosas
 
 Todo concreto para este campo y esta tarea. Nombrar primero el campo y el rol profesional que se toma como referencia (por ejemplo: investigadora de servicio senior, analista de datos de riesgo, editor de no ficción).
+
+Lo que se propone en los puntos 1 a 3 es criterio, no evidencia: va marcado como hipótesis, en la escala de `references/certeza-y-muestras.md`. Si una propuesta sale de algo que la persona compartió, decir de qué.
 
 1. **Qué haría un profesional top que no estoy pidiendo.** Entre 2 y 4 cosas, cada una con una línea de por qué cambia el resultado. Prohibido lo genérico ("investigar más", "considerar al usuario").
 2. **El material más crudo.** De qué fuente primaria arrancaría en lugar de lo ya digerido (resúmenes, informes, dashboards, lo que pegó el usuario). Decir dónde vive y cómo se consigue. Si en esta sesión no hay acceso, marcarlo.

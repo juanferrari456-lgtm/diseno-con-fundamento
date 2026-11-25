@@ -18,7 +18,7 @@ Casi todo lo que sale mal en un proyecto de diseño sale mal antes de diseñar: 
 
 ## Cómo se conectan
 
-Cada línea es una skill que nombra a otra en sus instrucciones: le pide material, le pasa el resultado o le deriva lo que no le toca. Son 146 conexiones. La más conectada es `encuadre-del-problema`, con 23 (en amarillo): no es la que dibuja ni la que presenta, es la que pregunta qué problema estamos resolviendo. El conteo sale de `herramientas/contar-conexiones.py` y las imágenes de `herramientas/dibujar-imagenes.py`.
+Cada línea es una skill que nombra a otra en sus instrucciones: le pide material, le pasa el resultado o le deriva lo que no le toca. Son 147 conexiones. La más conectada es `encuadre-del-problema`, con 24 (en amarillo): no es la que dibuja ni la que presenta, es la que pregunta qué problema estamos resolviendo. El conteo sale de `herramientas/contar-conexiones.py` y las imágenes de `herramientas/dibujar-imagenes.py`.
 
 ![Mapa de las 21 skills y sus conexiones](docs/img/mapa-de-skills.png)
 
@@ -30,7 +30,7 @@ Seis etapas y tres skills de base.
 |---|---|---|
 | Base | `inicio` | Arma el contexto de tu organización con una entrevista corta y te dice por dónde empezar |
 | Base | `markdown-converter` | PDF, Word, decks, planillas o audio a Markdown con nombre consistente |
-| Base | `mejor` | Reescribe un pedido para hacerlo más profundo, no más grande. Se llama por nombre: /mejor |
+| Base | `mejor` | Reescribe un pedido para hacerlo más profundo, no más grande; se llama con /mejor |
 | Encuadrar | `encuadre-del-problema` | Pasa un pedido a problema antes de diseñar; reencuadra después de investigar |
 | Encuadrar | `mapa-de-stakeholders` | Actores, poder e interés con evidencia, tensiones y a quién hablar primero |
 | Encuadrar | `evidencia` | De la pregunta a las fuentes, la consulta, el análisis y la certeza |
@@ -60,6 +60,8 @@ No hace falta usarlas en orden ni instalarlas todas. Si una skill necesita algo 
 /plugin marketplace add juanferrari456-lgtm/diseno-con-fundamento
 /plugin install diseno-con-fundamento@diseno-con-fundamento
 ```
+
+Si ya lo tenías instalado, actualizalo desde la terminal con `claude plugin update diseno-con-fundamento@diseno-con-fundamento`, o en una sesión desde `/plugin`, pestaña Installed, Update now.
 
 ### Claude en la web o en la app (de a una)
 

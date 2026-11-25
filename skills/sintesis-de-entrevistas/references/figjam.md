@@ -25,7 +25,7 @@ personal, sin segunda persona, sin voz de informe.
 
 - No usar "el usuario siente", "el entrevistado manifiesta", "se pudo observar".
 - No usar relleno: "cabe destacar", "es importante mencionar".
-- No usar `—` ni `·`. Para separar dentro de una línea, `|`, `-` o coma.
+- No usar la raya larga ni el punto medio. Para separar dentro de una línea, `|`, `-` o coma.
 - Sin adjetivos valorativos sin dato atrás: "crítico", "enorme". La severidad la
   lleva el semáforo.
 - Preferir el sustantivo concreto del entrevistado antes que la categoría
