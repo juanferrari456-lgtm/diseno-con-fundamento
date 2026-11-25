@@ -159,7 +159,7 @@ def main():
     mapa = html(
         f'<svg width="1080" height="836" viewBox="60 -140 1900 1500">{grafo}</svg>'
         f'<div class="m" style="position:absolute;left:0;right:0;top:852px;text-align:center;font-size:17px;color:{GRIS}">'
-        f'{total} conexiones · en amarillo, las {entran + salen} de <span style="color:{AMARILLO}">{CENTRO}</span>: '
+        f'{total} conexiones | en amarillo, las {entran + salen} de <span style="color:{AMARILLO}">{CENTRO}</span>: '
         f'{entran} entran y {salen} salen</div>', 1080, 900, args.mono)
 
     portada = html(
@@ -169,10 +169,10 @@ def main():
         f'letter-spacing:-1.2px;margin-top:26px">{skills} skills que<br><span style="color:{AMARILLO}">se llaman entre sí</span></div>'
         f'<div style="font-size:18.5px;line-height:1.32;color:#b9bbc2;margin-top:24px">Skills de Claude para diseñar '
         f'servicios. En español y gratis. Toda afirmación con fuente, ninguna persona inventada.</div>'
-        f'<div class="m" style="font-size:15px;line-height:1.5;color:#b9bbc2;margin-top:24px">{total} conexiones · la más conectada:'
+        f'<div class="m" style="font-size:15px;line-height:1.5;color:#b9bbc2;margin-top:24px">{total} conexiones | la más conectada:'
         f'<br><span style="color:{AMARILLO}">{CENTRO}</span></div>'
         f'<div style="font-size:16px;margin-top:22px"><b style="font-weight:600">Juan Ferrari</b>'
-        f'<span style="color:{GRIS}"> · Service Designer</span></div></div>'
+        f'<span style="color:{GRIS}"> | Service Designer</span></div></div>'
         f'<svg style="position:absolute;left:440px;top:24px" width="740" height="584" viewBox="60 -140 1900 1500">{grafo}</svg>',
         1200, 627, args.mono)
 
